@@ -51,6 +51,12 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="HangmanForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HangmanForm.Designer.cs">
+      <DependentUpon>HangmanForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -74,6 +80,15 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Images\base.png" />
+    <Content Include="Images\hangman-1.png" />
+    <Content Include="Images\hangman-2.png" />
+    <Content Include="Images\hangman-3.png" />
+    <Content Include="Images\hangman-4.png" />
+    <Content Include="Images\hangman-5.png" />
+    <Content Include="Images\hangman-6.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
