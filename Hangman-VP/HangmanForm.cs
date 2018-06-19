@@ -42,6 +42,120 @@ namespace Hangman_VP
             hangmanRightLeg.ImageLocation = @"Images\hangman-6.png";
         }
 
+        //Генерира random збор од листата - Words
+        private void GenerateDisplayWord()
+        {
+            Word = Words.ElementAt(30);
+            string word = Word.Name.ToUpper()[0].ToString();
+            for (var i = 0; i < Word.Name.Length - 1; i++)
+            {
+                word += " _";
+            }
+            WordToGuessLabel.Text = word;
+
+            hangmanHead.Visible = false;
+            hangmanBody.Visible = false;
+            hangmanLeftArm.Visible = false;
+            hangmanRightArm.Visible = false;
+            hangmanLeftLeg.Visible = false;
+            hangmanRightLeg.Visible = false;
+        }
+
+        //Оваа функција е за да го врати зборот во форма како : U _ I _ E _ S _ T Y  со празни места..(изгледа поубаво)
+        private void UpdateDisplayWord(string word)
+        {
+            StringBuilder wordBuilder = new StringBuilder();
+
+            for (int i = 0; i < word.Length; i++)
+            {
+                if (i == word.Length - 1)
+                    wordBuilder.Append(word[i]);
+                else
+                    wordBuilder.Append(word[i] + " ");
+            }
+            WordToGuessLabel.Text = wordBuilder.ToString().ToUpper();
+        }
+
+        //Ја валидира буквата што е кликната
+        private void ValidateLetter(char letter)
+        {
+            bool letterGuessIsCorrect = false;
+
+            //Ибриши ги празните места од зборот.. за да дојде во форма како: U_I_E_S_TY
+            string word = new string(WordToGuessLabel.Text.Where(c => !Char.IsWhiteSpace(c)).ToArray()).ToLower();
+            for (int i = 0; i < Word.Name.Length; i++)
+            {
+                //Ако буквата кликната ја има во зборот, избриши го "_" цртичето и стави ја буквата.
+                if (Word.Name[i] == letter)
+                {
+                    letterGuessIsCorrect = true;
+                    word = word.Remove(i, 1);
+                    word = word.Insert(i, letter.ToString());
+                }
+            }
+
+            if (Word.Name == word)
+            {
+                Game.Player.HighScore += 1;
+                //Избриши го зборот од листата, за да не се појави повторно
+                Words.Remove(Word);
+                UpdateDisplayWord(word);
+                MessageBox.Show("You guessed the word !", "Congratulations!");
+                GenerateDisplayWord();
+                return;
+            }
+
+            if (!letterGuessIsCorrect)
+            {
+                ++Mistakes;
+                string letters = letter + ", ";
+                WrongoLettersLabel.Text += letters.ToUpper();
+                switch (Mistakes)
+                {
+                    case 1:
+                        hangmanHead.Visible = true;
+                        break;
+                    case 2:
+                        hangmanBody.Visible = true;
+                        break;
+                    case 3:
+                        hangmanLeftArm.Visible = true;
+                        break;
+                    case 4:
+                        hangmanRightArm.Visible = true;
+                        break;
+                    case 5:
+                        hangmanLeftLeg.Visible = true;
+                        break;
+                    case 6:
+                        hangmanRightLeg.Visible = true;
+                        break;
+                    default:
+                        break;
+                }
+
+                if (Mistakes >= 6)
+                {
+                    MessageBox.Show($"Too bad, the correct word was: {Word.Name.ToUpper()}", "Woops you got hanged!");
+                    GenerateDisplayWord();
+                    return;
+                }
+            }
+            else
+            {
+                UpdateDisplayWord(word);
+            }
+        }
+
+        //Функција која се повикува кога буква ќе се кликне
+        private void letter_Clicked(object sender, EventArgs e)
+        {
+            var button = (Button)sender;
+
+            var letter = button.Text.ToLower()[0];
+            ValidateLetter(letter);
+        }
+
         //Функција која ги генерира зборовите и ги сместува во листа - Words
         private void LoadWords()
         {
@@ -290,21 +404,5 @@ namespace Hangman_VP
             Words = words;
         }
 
-        //Функција која генерира random збор од листата - Words
-        private void GenerateDisplayWord()
-        {
-            Word = Words.ElementAt(30);
-            string word = Word.Name.ToUpper()[0].ToString();
-            for (var i = 0; i < Word.Name.Length - 1; i++)
-            {
-                word += " _";
-            }
-            WordToGuessLabel.Text = word;
-        }
-
-        private void letter_Clicked(object sender, EventArgs e)
-        {
-            var button = (Button)sender;
-        }
     }
 }
