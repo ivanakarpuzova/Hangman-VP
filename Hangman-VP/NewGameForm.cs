@@ -28,6 +28,9 @@ namespace Hangman_VP
             RopePictureBox.ImageLocation = @"Images\rope.jpg";
             RopePictureBox2.ImageLocation = @"Images\rope.jpg";
             LogoPictureBox.ImageLocation = @"Images\logo.png";
+
+            LanguageSettings.SetLanguage(Language.English);
+            RefreshForm();
         }
 
         private void NewGameStartButton_Click(object sender, EventArgs e)
@@ -37,7 +40,7 @@ namespace Hangman_VP
 
             if (String.IsNullOrEmpty(name))
             {
-                MessageBox.Show("Внесете име!", "Невалидно име!");
+                MessageBox.Show(LanguageSettings.EnterNameMessage, LanguageSettings.InvalidName);
                 return;
             }
 
@@ -74,15 +77,15 @@ namespace Hangman_VP
                     if (((CheckBox)checkbox).Checked)
                     {
                         hasCheckedCategory = true;
-                        if (checkbox.Text == "General")
+                        if (checkbox.Text == "General" || checkbox.Text == "Општо")
                             categories.Add(Category.General);
-                        if (checkbox.Text == "Sport")
+                        if (checkbox.Text == "Sport" || checkbox.Text == "Спорт")
                             categories.Add(Category.Sport);
-                        if (checkbox.Text == "Science")
+                        if (checkbox.Text == "Science" || checkbox.Text == "Наука")
                             categories.Add(Category.Science);
-                        if (checkbox.Text == "Movies")
+                        if (checkbox.Text == "Movies" || checkbox.Text == "Филмови")
                             categories.Add(Category.Movies);
-                        if (checkbox.Text == "Geography")
+                        if (checkbox.Text == "Geography" || checkbox.Text == "Географија")
                             categories.Add(Category.Geography);
                     }
                 }
@@ -95,7 +98,6 @@ namespace Hangman_VP
                 categories.Add(Category.Science);
                 categories.Add(Category.Movies);
                 categories.Add(Category.Geography);
-
             }
 
             Player player = new Player(name, 0);
@@ -115,7 +117,7 @@ namespace Hangman_VP
             if (PlayerNameTextBox.Text.Trim().Length == 0)
             {
                 e.Cancel = true;
-                errorProvider1.SetError(PlayerNameTextBox, "Ве молиме внесете го вашето име!");
+                errorProvider1.SetError(PlayerNameTextBox, LanguageSettings.EnterNameMessage);
             }
             else
             {
@@ -150,6 +152,45 @@ namespace Hangman_VP
         {
             HighScoresForm highScoresForm = new HighScoresForm();
             highScoresForm.Show();
+        }
+
+        private void RefreshForm()
+        {
+            this.Text = LanguageSettings.NewGame;
+            gameToolStripMenuItem.Text = LanguageSettings.NewGame;
+            newGameToolStripMenuItem.Text = LanguageSettings.NewGame;
+            instructionsToolStripMenuItem.Text = LanguageSettings.Instructions;
+            quitGameToolStripMenuItem.Text = LanguageSettings.QuitGame;
+            highScoresToolStripMenuItem.Text = LanguageSettings.HighScores;
+            developersToolStripMenuItem.Text = LanguageSettings.Developers;
+            NameLabel.Text = LanguageSettings.YourName;
+            DifficultyLabel.Text = LanguageSettings.Difficulty;
+            DifficultyEasyRadioButton.Text = LanguageSettings.DifficultyEasy;
+            DifficultyMediumRadioButton.Text = LanguageSettings.DifficultyMedium;
+            DifficultyHardRadioButton.Text = LanguageSettings.DifficultyHard;
+            LanguageLabel.Text = LanguageSettings.LanguageLabel;
+            LanguageEnglishRadioButton.Text = LanguageSettings.LanguageEnglish;
+            LanguageMacedonianRadioButton.Text = LanguageSettings.LanguageMacedonian;
+            CategoriesLabel.Text = LanguageSettings.CategoriesLabel;
+            CategoriesGeneralCheckBox.Text = LanguageSettings.CategoriesGeneral;
+            CategoriesSportCheckBox.Text = LanguageSettings.CategoriesSport;
+            CategoriesScienceCheckBox.Text = LanguageSettings.CategoriesScience;
+            CategoriesMoviesCheckBox.Text = LanguageSettings.CategoriesMovies;
+            CategoriesGeographyCheckBox.Text = LanguageSettings.CategoriesGeography;
+            NewGameStartButton.Text = LanguageSettings.StartButton;
+
+        }
+
+        private void LanguageEnglishRadioButton_CheckedChanged(object sender, EventArgs e)
+        {
+            LanguageSettings.SetLanguage(Language.English);
+            RefreshForm();
+        }
+
+        private void LanguageMacedonianRadioButton_CheckedChanged(object sender, EventArgs e)
+        {
+            LanguageSettings.SetLanguage(Language.Macedonian);
+            RefreshForm();
         }
     }
 }

@@ -57,6 +57,7 @@
     <Compile Include="InstructionsForm.Designer.cs">
       <DependentUpon>InstructionsForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="LanguageSettings.cs" />
     <Compile Include="NewGameForm.cs">
       <SubType>Form</SubType>
     </Compile>

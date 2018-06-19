@@ -94,6 +94,7 @@
             this.LanguageMacedonianRadioButton.TabStop = true;
             this.LanguageMacedonianRadioButton.Text = "Macedonian";
             this.LanguageMacedonianRadioButton.UseVisualStyleBackColor = true;
+            this.LanguageMacedonianRadioButton.CheckedChanged += new System.EventHandler(this.LanguageMacedonianRadioButton_CheckedChanged);
             // 
             // LanguageEnglishRadioButton
             // 
@@ -107,6 +108,7 @@
             this.LanguageEnglishRadioButton.TabStop = true;
             this.LanguageEnglishRadioButton.Text = "English";
             this.LanguageEnglishRadioButton.UseVisualStyleBackColor = true;
+            this.LanguageEnglishRadioButton.CheckedChanged += new System.EventHandler(this.LanguageEnglishRadioButton_CheckedChanged);
             // 
             // LanguageLabel
             // 
