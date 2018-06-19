@@ -17,9 +17,10 @@ namespace Hangman_VP
             InitializeComponent();
 
             WindowState = FormWindowState.Normal;
-            this.Text = "Instrukcii";
-            InstructionsLabel.Text = "Instrukcii";
-            HangmanInstructionsLabel.Text = "Instrukcii";
+            WindowState = FormWindowState.Normal;
+            this.Text = LanguageSettings.Instructions;
+            InstructionsLabel.Text = LanguageSettings.InstructionsText;
+            HangmanInstructionsLabel.Text = LanguageSettings.HangmanInstructionLabel;
         }
 
         private void button1_Click(object sender, EventArgs e)
