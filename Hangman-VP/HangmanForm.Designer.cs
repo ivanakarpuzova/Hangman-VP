@@ -67,6 +67,7 @@
             this.CategoryLabel = new System.Windows.Forms.Label();
             this.WrongoLettersLabel = new System.Windows.Forms.Label();
             this.WordToGuessLabel = new System.Windows.Forms.Label();
+            this.TimerLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.hangmanLeftLeg)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.hangmanBody)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.hangmanHead)).BeginInit();
@@ -576,6 +577,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.TimerLabel);
             this.groupBox1.Controls.Add(this.WrongLettersLabel);
             this.groupBox1.Controls.Add(this.CategoryLabel);
             this.groupBox1.Controls.Add(this.WrongoLettersLabel);
@@ -631,6 +633,17 @@
             this.WordToGuessLabel.Size = new System.Drawing.Size(402, 71);
             this.WordToGuessLabel.TabIndex = 32;
             this.WordToGuessLabel.Text = "Б Е С И Л К А ";
+            // 
+            // TimerLabel
+            // 
+            this.TimerLabel.AutoSize = true;
+            this.TimerLabel.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.TimerLabel.Location = new System.Drawing.Point(4, 112);
+            this.TimerLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.TimerLabel.Name = "TimerLabel";
+            this.TimerLabel.Size = new System.Drawing.Size(103, 30);
+            this.TimerLabel.TabIndex = 33;
+            this.TimerLabel.Text = "Time left:";
             // 
             // HangmanForm
             // 
@@ -706,5 +719,6 @@
         private System.Windows.Forms.Label CategoryLabel;
         private System.Windows.Forms.Label WrongoLettersLabel;
         private System.Windows.Forms.Label WordToGuessLabel;
+        private System.Windows.Forms.Label TimerLabel;
     }
 }

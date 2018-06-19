@@ -180,6 +180,7 @@ namespace Hangman_VP
                 int newTime = Time - TimeElapsed;
                 int min = newTime / 60;
                 int sec = newTime % 60;
+                TimerLabel.Text = string.Format("Time left: {0:00}:{1:00}", min, sec);
             }
             else
             {
@@ -190,7 +191,6 @@ namespace Hangman_VP
                 GenerateDisplayWord();
             }
         }
-
         //Функција која ги генерира зборовите и ги сместува во листа - Words
         private void LoadWords()
         {
