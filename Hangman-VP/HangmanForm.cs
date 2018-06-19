@@ -15,7 +15,7 @@ namespace Hangman_VP
     public partial class HangmanForm : Form
     {
         private Timer Timer = new Timer();
-        private static int Time = 120;
+        private static int Time { get; set; }
         private const int Interval = 1000;
         public int TimeElapsed = 0;
 
@@ -29,13 +29,31 @@ namespace Hangman_VP
         {
             InitializeComponent();
 
-            Timer.Tick += new EventHandler(timer_Tick);
-            Timer.Interval = Interval;
-
+            InitializeTimer();
             DisplayHangmanAndBase();
             LoadWords();
             GenerateDisplayWord();
             Game = game;
+        }
+
+        //Се мести времето во зависност од тежината избрана -- Easy - 3 минути, Medium - 2 минути, Hard - 1 минута
+        private void InitializeTimer()
+        {
+            if (Game.Difficulty == Difficulty.Easy)
+            {
+                Time = 180;
+            }
+            else if (Game.Difficulty == Difficulty.Medium)
+            {
+                Time = 120;
+            }
+            else
+            {
+                Time = 60;
+            }
+
+            Timer.Tick += new EventHandler(timer_Tick);
+            Timer.Interval = Interval;
         }
 
         //Функција која го прикажува човекот и бесилката
@@ -465,7 +483,7 @@ namespace Hangman_VP
 
         private void HintButton_Click(object sender, EventArgs e)
         {
-
+            MessageBox.Show($"{Word.Hint}", "Hint");
         }
     }
 }
