@@ -41,11 +41,10 @@
             // 
             this.DevelopedByLabel.AutoSize = true;
             this.DevelopedByLabel.Font = new System.Drawing.Font("Segoe UI", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.DevelopedByLabel.Location = new System.Drawing.Point(171, 24);
-            this.DevelopedByLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.DevelopedByLabel.Location = new System.Drawing.Point(228, 30);
             this.DevelopedByLabel.Name = "DevelopedByLabel";
-            this.DevelopedByLabel.Padding = new System.Windows.Forms.Padding(8, 0, 8, 0);
-            this.DevelopedByLabel.Size = new System.Drawing.Size(211, 37);
+            this.DevelopedByLabel.Padding = new System.Windows.Forms.Padding(11, 0, 11, 0);
+            this.DevelopedByLabel.Size = new System.Drawing.Size(254, 45);
             this.DevelopedByLabel.TabIndex = 11;
             this.DevelopedByLabel.Text = "Developed by";
             // 
@@ -55,10 +54,10 @@
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F);
             this.button1.ForeColor = System.Drawing.SystemColors.Window;
-            this.button1.Location = new System.Drawing.Point(198, 316);
-            this.button1.Margin = new System.Windows.Forms.Padding(2);
+            this.button1.Location = new System.Drawing.Point(264, 389);
+            this.button1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(166, 38);
+            this.button1.Size = new System.Drawing.Size(221, 47);
             this.button1.TabIndex = 10;
             this.button1.Text = "OK";
             this.button1.UseVisualStyleBackColor = false;
@@ -68,11 +67,10 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 22.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label1.Location = new System.Drawing.Point(8, 33);
-            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label1.Location = new System.Drawing.Point(11, 41);
             this.label1.Name = "label1";
-            this.label1.Padding = new System.Windows.Forms.Padding(8, 0, 8, 0);
-            this.label1.Size = new System.Drawing.Size(418, 41);
+            this.label1.Padding = new System.Windows.Forms.Padding(11, 0, 11, 0);
+            this.label1.Size = new System.Drawing.Size(535, 51);
             this.label1.TabIndex = 4;
             this.label1.Text = "- Симон Ќулумов    142098";
             // 
@@ -80,11 +78,10 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI", 22.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label2.Location = new System.Drawing.Point(8, 161);
-            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label2.Location = new System.Drawing.Point(11, 198);
             this.label2.Name = "label2";
-            this.label2.Padding = new System.Windows.Forms.Padding(8, 0, 8, 0);
-            this.label2.Size = new System.Drawing.Size(428, 41);
+            this.label2.Padding = new System.Windows.Forms.Padding(11, 0, 11, 0);
+            this.label2.Size = new System.Drawing.Size(541, 51);
             this.label2.TabIndex = 8;
             this.label2.Text = "- Наташа Стојанова 161079";
             // 
@@ -92,11 +89,10 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Segoe UI", 22.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label4.Location = new System.Drawing.Point(8, 97);
-            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label4.Location = new System.Drawing.Point(11, 119);
             this.label4.Name = "label4";
-            this.label4.Padding = new System.Windows.Forms.Padding(8, 0, 8, 0);
-            this.label4.Size = new System.Drawing.Size(424, 41);
+            this.label4.Padding = new System.Windows.Forms.Padding(11, 0, 11, 0);
+            this.label4.Size = new System.Drawing.Size(541, 51);
             this.label4.TabIndex = 7;
             this.label4.Text = "- Ивана Карпузова  163054";
             // 
@@ -105,23 +101,25 @@
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.label4);
-            this.groupBox1.Location = new System.Drawing.Point(54, 64);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(2);
+            this.groupBox1.Location = new System.Drawing.Point(72, 79);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(2);
-            this.groupBox1.Size = new System.Drawing.Size(454, 225);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.groupBox1.Size = new System.Drawing.Size(605, 277);
             this.groupBox1.TabIndex = 12;
             this.groupBox1.TabStop = false;
             // 
             // DevelopersForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Window;
-            this.ClientSize = new System.Drawing.Size(568, 366);
+            this.ClientSize = new System.Drawing.Size(757, 450);
             this.Controls.Add(this.DevelopedByLabel);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.groupBox1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "DevelopersForm";
             this.Text = "DevelopersForm";
             this.groupBox1.ResumeLayout(false);

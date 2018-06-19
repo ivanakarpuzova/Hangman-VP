@@ -74,20 +74,20 @@
             // 
             // LogoPictureBox
             // 
-            this.LogoPictureBox.Location = new System.Drawing.Point(163, 52);
-            this.LogoPictureBox.Margin = new System.Windows.Forms.Padding(2);
+            this.LogoPictureBox.Location = new System.Drawing.Point(217, 64);
+            this.LogoPictureBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.LogoPictureBox.Name = "LogoPictureBox";
-            this.LogoPictureBox.Size = new System.Drawing.Size(279, 46);
+            this.LogoPictureBox.Size = new System.Drawing.Size(372, 57);
             this.LogoPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.LogoPictureBox.TabIndex = 30;
             this.LogoPictureBox.TabStop = false;
             // 
             // RopePictureBox
             // 
-            this.RopePictureBox.Location = new System.Drawing.Point(437, 23);
-            this.RopePictureBox.Margin = new System.Windows.Forms.Padding(2);
+            this.RopePictureBox.Location = new System.Drawing.Point(583, 28);
+            this.RopePictureBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.RopePictureBox.Name = "RopePictureBox";
-            this.RopePictureBox.Size = new System.Drawing.Size(211, 222);
+            this.RopePictureBox.Size = new System.Drawing.Size(281, 273);
             this.RopePictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.RopePictureBox.TabIndex = 28;
             this.RopePictureBox.TabStop = false;
@@ -99,35 +99,35 @@
             // developersToolStripMenuItem
             // 
             this.developersToolStripMenuItem.Name = "developersToolStripMenuItem";
-            this.developersToolStripMenuItem.Size = new System.Drawing.Size(77, 20);
+            this.developersToolStripMenuItem.Size = new System.Drawing.Size(96, 24);
             this.developersToolStripMenuItem.Text = "Developers";
             this.developersToolStripMenuItem.Click += new System.EventHandler(this.developersToolStripMenuItem_Click);
             // 
             // highScoresToolStripMenuItem
             // 
             this.highScoresToolStripMenuItem.Name = "highScoresToolStripMenuItem";
-            this.highScoresToolStripMenuItem.Size = new System.Drawing.Size(82, 20);
+            this.highScoresToolStripMenuItem.Size = new System.Drawing.Size(100, 24);
             this.highScoresToolStripMenuItem.Text = "High Scores";
             this.highScoresToolStripMenuItem.Click += new System.EventHandler(this.highScoresToolStripMenuItem_Click);
             // 
             // quitGameToolStripMenuItem
             // 
             this.quitGameToolStripMenuItem.Name = "quitGameToolStripMenuItem";
-            this.quitGameToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.quitGameToolStripMenuItem.Size = new System.Drawing.Size(159, 26);
             this.quitGameToolStripMenuItem.Text = "Quit Game";
             this.quitGameToolStripMenuItem.Click += new System.EventHandler(this.quitGameToolStripMenuItem_Click);
             // 
             // instructionsToolStripMenuItem
             // 
             this.instructionsToolStripMenuItem.Name = "instructionsToolStripMenuItem";
-            this.instructionsToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.instructionsToolStripMenuItem.Size = new System.Drawing.Size(159, 26);
             this.instructionsToolStripMenuItem.Text = "Instructions";
             this.instructionsToolStripMenuItem.Click += new System.EventHandler(this.instructionsToolStripMenuItem_Click);
             // 
             // newGameToolStripMenuItem
             // 
             this.newGameToolStripMenuItem.Name = "newGameToolStripMenuItem";
-            this.newGameToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.newGameToolStripMenuItem.Size = new System.Drawing.Size(159, 26);
             this.newGameToolStripMenuItem.Text = "New Game";
             this.newGameToolStripMenuItem.Click += new System.EventHandler(this.newGameToolStripMenuItem_Click);
             // 
@@ -138,7 +138,7 @@
             this.instructionsToolStripMenuItem,
             this.quitGameToolStripMenuItem});
             this.gameToolStripMenuItem.Name = "gameToolStripMenuItem";
-            this.gameToolStripMenuItem.Size = new System.Drawing.Size(50, 20);
+            this.gameToolStripMenuItem.Size = new System.Drawing.Size(60, 24);
             this.gameToolStripMenuItem.Text = "Game";
             // 
             // menuStrip1
@@ -150,8 +150,8 @@
             this.developersToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Padding = new System.Windows.Forms.Padding(4, 2, 0, 2);
-            this.menuStrip1.Size = new System.Drawing.Size(608, 24);
+            this.menuStrip1.Padding = new System.Windows.Forms.Padding(5, 2, 0, 2);
+            this.menuStrip1.Size = new System.Drawing.Size(811, 28);
             this.menuStrip1.TabIndex = 27;
             this.menuStrip1.Text = "Options";
             // 
@@ -161,10 +161,10 @@
             this.NewGameStartButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.NewGameStartButton.Font = new System.Drawing.Font("Segoe UI", 21F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.NewGameStartButton.ForeColor = System.Drawing.SystemColors.Window;
-            this.NewGameStartButton.Location = new System.Drawing.Point(148, 480);
-            this.NewGameStartButton.Margin = new System.Windows.Forms.Padding(2);
+            this.NewGameStartButton.Location = new System.Drawing.Point(197, 591);
+            this.NewGameStartButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.NewGameStartButton.Name = "NewGameStartButton";
-            this.NewGameStartButton.Size = new System.Drawing.Size(314, 60);
+            this.NewGameStartButton.Size = new System.Drawing.Size(419, 74);
             this.NewGameStartButton.TabIndex = 26;
             this.NewGameStartButton.Text = "Start";
             this.NewGameStartButton.UseVisualStyleBackColor = false;
@@ -174,20 +174,19 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Segoe Script", 21F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label5.Location = new System.Drawing.Point(182, 52);
-            this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label5.Location = new System.Drawing.Point(243, 64);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(274, 46);
+            this.label5.Size = new System.Drawing.Size(346, 57);
             this.label5.TabIndex = 25;
             this.label5.Text = "H A N _ G M A N";
             this.label5.Visible = false;
             // 
             // RopePictureBox2
             // 
-            this.RopePictureBox2.Location = new System.Drawing.Point(-50, 23);
-            this.RopePictureBox2.Margin = new System.Windows.Forms.Padding(2);
+            this.RopePictureBox2.Location = new System.Drawing.Point(-67, 28);
+            this.RopePictureBox2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.RopePictureBox2.Name = "RopePictureBox2";
-            this.RopePictureBox2.Size = new System.Drawing.Size(211, 222);
+            this.RopePictureBox2.Size = new System.Drawing.Size(281, 273);
             this.RopePictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.RopePictureBox2.TabIndex = 29;
             this.RopePictureBox2.TabStop = false;
@@ -196,10 +195,10 @@
             // 
             this.CategoriesGeneralCheckBox.AutoSize = true;
             this.CategoriesGeneralCheckBox.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.CategoriesGeneralCheckBox.Location = new System.Drawing.Point(154, 17);
-            this.CategoriesGeneralCheckBox.Margin = new System.Windows.Forms.Padding(2);
+            this.CategoriesGeneralCheckBox.Location = new System.Drawing.Point(205, 21);
+            this.CategoriesGeneralCheckBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.CategoriesGeneralCheckBox.Name = "CategoriesGeneralCheckBox";
-            this.CategoriesGeneralCheckBox.Size = new System.Drawing.Size(66, 19);
+            this.CategoriesGeneralCheckBox.Size = new System.Drawing.Size(82, 24);
             this.CategoriesGeneralCheckBox.TabIndex = 12;
             this.CategoriesGeneralCheckBox.Text = "General";
             this.CategoriesGeneralCheckBox.UseVisualStyleBackColor = true;
@@ -208,10 +207,10 @@
             // 
             this.CategoriesMoviesCheckBox.AutoSize = true;
             this.CategoriesMoviesCheckBox.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.CategoriesMoviesCheckBox.Location = new System.Drawing.Point(237, 39);
-            this.CategoriesMoviesCheckBox.Margin = new System.Windows.Forms.Padding(2);
+            this.CategoriesMoviesCheckBox.Location = new System.Drawing.Point(316, 48);
+            this.CategoriesMoviesCheckBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.CategoriesMoviesCheckBox.Name = "CategoriesMoviesCheckBox";
-            this.CategoriesMoviesCheckBox.Size = new System.Drawing.Size(62, 17);
+            this.CategoriesMoviesCheckBox.Size = new System.Drawing.Size(75, 23);
             this.CategoriesMoviesCheckBox.TabIndex = 11;
             this.CategoriesMoviesCheckBox.Text = "Movies";
             this.CategoriesMoviesCheckBox.UseVisualStyleBackColor = true;
@@ -220,10 +219,10 @@
             // 
             this.CategoriesGeographyCheckBox.AutoSize = true;
             this.CategoriesGeographyCheckBox.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.CategoriesGeographyCheckBox.Location = new System.Drawing.Point(154, 62);
-            this.CategoriesGeographyCheckBox.Margin = new System.Windows.Forms.Padding(2);
+            this.CategoriesGeographyCheckBox.Location = new System.Drawing.Point(205, 76);
+            this.CategoriesGeographyCheckBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.CategoriesGeographyCheckBox.Name = "CategoriesGeographyCheckBox";
-            this.CategoriesGeographyCheckBox.Size = new System.Drawing.Size(84, 19);
+            this.CategoriesGeographyCheckBox.Size = new System.Drawing.Size(104, 24);
             this.CategoriesGeographyCheckBox.TabIndex = 10;
             this.CategoriesGeographyCheckBox.Text = "Geography";
             this.CategoriesGeographyCheckBox.UseVisualStyleBackColor = true;
@@ -232,10 +231,10 @@
             // 
             this.CategoriesScienceCheckBox.AutoSize = true;
             this.CategoriesScienceCheckBox.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.CategoriesScienceCheckBox.Location = new System.Drawing.Point(154, 39);
-            this.CategoriesScienceCheckBox.Margin = new System.Windows.Forms.Padding(2);
+            this.CategoriesScienceCheckBox.Location = new System.Drawing.Point(205, 48);
+            this.CategoriesScienceCheckBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.CategoriesScienceCheckBox.Name = "CategoriesScienceCheckBox";
-            this.CategoriesScienceCheckBox.Size = new System.Drawing.Size(66, 19);
+            this.CategoriesScienceCheckBox.Size = new System.Drawing.Size(81, 24);
             this.CategoriesScienceCheckBox.TabIndex = 9;
             this.CategoriesScienceCheckBox.Text = "Science";
             this.CategoriesScienceCheckBox.UseVisualStyleBackColor = true;
@@ -244,10 +243,10 @@
             // 
             this.CategoriesSportCheckBox.AutoSize = true;
             this.CategoriesSportCheckBox.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.CategoriesSportCheckBox.Location = new System.Drawing.Point(237, 17);
-            this.CategoriesSportCheckBox.Margin = new System.Windows.Forms.Padding(2);
+            this.CategoriesSportCheckBox.Location = new System.Drawing.Point(316, 21);
+            this.CategoriesSportCheckBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.CategoriesSportCheckBox.Name = "CategoriesSportCheckBox";
-            this.CategoriesSportCheckBox.Size = new System.Drawing.Size(54, 19);
+            this.CategoriesSportCheckBox.Size = new System.Drawing.Size(67, 24);
             this.CategoriesSportCheckBox.TabIndex = 8;
             this.CategoriesSportCheckBox.Text = "Sport";
             this.CategoriesSportCheckBox.UseVisualStyleBackColor = true;
@@ -256,10 +255,9 @@
             // 
             this.CategoriesLabel.AutoSize = true;
             this.CategoriesLabel.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.CategoriesLabel.Location = new System.Drawing.Point(13, 32);
-            this.CategoriesLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.CategoriesLabel.Location = new System.Drawing.Point(17, 39);
             this.CategoriesLabel.Name = "CategoriesLabel";
-            this.CategoriesLabel.Size = new System.Drawing.Size(102, 25);
+            this.CategoriesLabel.Size = new System.Drawing.Size(128, 32);
             this.CategoriesLabel.TabIndex = 6;
             this.CategoriesLabel.Text = "Categories";
             // 
@@ -267,11 +265,11 @@
             // 
             this.groupBox3.Controls.Add(this.NameLabel);
             this.groupBox3.Controls.Add(this.PlayerNameTextBox);
-            this.groupBox3.Location = new System.Drawing.Point(148, 110);
-            this.groupBox3.Margin = new System.Windows.Forms.Padding(2);
+            this.groupBox3.Location = new System.Drawing.Point(197, 135);
+            this.groupBox3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Padding = new System.Windows.Forms.Padding(2);
-            this.groupBox3.Size = new System.Drawing.Size(314, 84);
+            this.groupBox3.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.groupBox3.Size = new System.Drawing.Size(419, 103);
             this.groupBox3.TabIndex = 22;
             this.groupBox3.TabStop = false;
             // 
@@ -279,30 +277,29 @@
             // 
             this.NameLabel.AutoSize = true;
             this.NameLabel.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.NameLabel.Location = new System.Drawing.Point(13, 29);
-            this.NameLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.NameLabel.Location = new System.Drawing.Point(17, 36);
             this.NameLabel.Name = "NameLabel";
-            this.NameLabel.Size = new System.Drawing.Size(106, 25);
+            this.NameLabel.Size = new System.Drawing.Size(134, 32);
             this.NameLabel.TabIndex = 1;
             this.NameLabel.Text = "Your name:";
             // 
             // PlayerNameTextBox
             // 
             this.PlayerNameTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F);
-            this.PlayerNameTextBox.Location = new System.Drawing.Point(139, 29);
-            this.PlayerNameTextBox.Margin = new System.Windows.Forms.Padding(2);
+            this.PlayerNameTextBox.Location = new System.Drawing.Point(185, 36);
+            this.PlayerNameTextBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.PlayerNameTextBox.Name = "PlayerNameTextBox";
-            this.PlayerNameTextBox.Size = new System.Drawing.Size(156, 28);
+            this.PlayerNameTextBox.Size = new System.Drawing.Size(207, 34);
             this.PlayerNameTextBox.TabIndex = 0;
             // 
             // LanguageMacedonianRadioButton
             // 
             this.LanguageMacedonianRadioButton.AutoSize = true;
             this.LanguageMacedonianRadioButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.LanguageMacedonianRadioButton.Location = new System.Drawing.Point(211, 33);
-            this.LanguageMacedonianRadioButton.Margin = new System.Windows.Forms.Padding(2);
+            this.LanguageMacedonianRadioButton.Location = new System.Drawing.Point(281, 41);
+            this.LanguageMacedonianRadioButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.LanguageMacedonianRadioButton.Name = "LanguageMacedonianRadioButton";
-            this.LanguageMacedonianRadioButton.Size = new System.Drawing.Size(94, 19);
+            this.LanguageMacedonianRadioButton.Size = new System.Drawing.Size(110, 22);
             this.LanguageMacedonianRadioButton.TabIndex = 8;
             this.LanguageMacedonianRadioButton.TabStop = true;
             this.LanguageMacedonianRadioButton.Text = "Macedonian";
@@ -313,10 +310,10 @@
             // 
             this.LanguageEnglishRadioButton.AutoSize = true;
             this.LanguageEnglishRadioButton.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.LanguageEnglishRadioButton.Location = new System.Drawing.Point(129, 33);
-            this.LanguageEnglishRadioButton.Margin = new System.Windows.Forms.Padding(2);
+            this.LanguageEnglishRadioButton.Location = new System.Drawing.Point(172, 41);
+            this.LanguageEnglishRadioButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.LanguageEnglishRadioButton.Name = "LanguageEnglishRadioButton";
-            this.LanguageEnglishRadioButton.Size = new System.Drawing.Size(63, 19);
+            this.LanguageEnglishRadioButton.Size = new System.Drawing.Size(77, 24);
             this.LanguageEnglishRadioButton.TabIndex = 7;
             this.LanguageEnglishRadioButton.TabStop = true;
             this.LanguageEnglishRadioButton.Text = "English";
@@ -328,11 +325,11 @@
             this.groupBox2.Controls.Add(this.LanguageMacedonianRadioButton);
             this.groupBox2.Controls.Add(this.LanguageEnglishRadioButton);
             this.groupBox2.Controls.Add(this.LanguageLabel);
-            this.groupBox2.Location = new System.Drawing.Point(148, 289);
-            this.groupBox2.Margin = new System.Windows.Forms.Padding(2);
+            this.groupBox2.Location = new System.Drawing.Point(197, 356);
+            this.groupBox2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Padding = new System.Windows.Forms.Padding(2);
-            this.groupBox2.Size = new System.Drawing.Size(314, 80);
+            this.groupBox2.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.groupBox2.Size = new System.Drawing.Size(419, 98);
             this.groupBox2.TabIndex = 23;
             this.groupBox2.TabStop = false;
             // 
@@ -340,10 +337,9 @@
             // 
             this.LanguageLabel.AutoSize = true;
             this.LanguageLabel.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.LanguageLabel.Location = new System.Drawing.Point(13, 27);
-            this.LanguageLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.LanguageLabel.Location = new System.Drawing.Point(17, 33);
             this.LanguageLabel.Name = "LanguageLabel";
-            this.LanguageLabel.Size = new System.Drawing.Size(95, 25);
+            this.LanguageLabel.Size = new System.Drawing.Size(119, 32);
             this.LanguageLabel.TabIndex = 6;
             this.LanguageLabel.Text = "Language";
             // 
@@ -354,11 +350,11 @@
             this.DifficultyGroupBox.Controls.Add(this.DifficultyMediumRadioButton);
             this.DifficultyGroupBox.Controls.Add(this.DifficultyHardRadioButton);
             this.DifficultyGroupBox.Font = new System.Drawing.Font("Symbol", 8.25F);
-            this.DifficultyGroupBox.Location = new System.Drawing.Point(148, 198);
-            this.DifficultyGroupBox.Margin = new System.Windows.Forms.Padding(2);
+            this.DifficultyGroupBox.Location = new System.Drawing.Point(197, 244);
+            this.DifficultyGroupBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.DifficultyGroupBox.Name = "DifficultyGroupBox";
-            this.DifficultyGroupBox.Padding = new System.Windows.Forms.Padding(2);
-            this.DifficultyGroupBox.Size = new System.Drawing.Size(314, 85);
+            this.DifficultyGroupBox.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.DifficultyGroupBox.Size = new System.Drawing.Size(419, 105);
             this.DifficultyGroupBox.TabIndex = 21;
             this.DifficultyGroupBox.TabStop = false;
             // 
@@ -366,10 +362,9 @@
             // 
             this.DifficultyLabel.AutoSize = true;
             this.DifficultyLabel.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.DifficultyLabel.Location = new System.Drawing.Point(13, 35);
-            this.DifficultyLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.DifficultyLabel.Location = new System.Drawing.Point(17, 43);
             this.DifficultyLabel.Name = "DifficultyLabel";
-            this.DifficultyLabel.Size = new System.Drawing.Size(87, 25);
+            this.DifficultyLabel.Size = new System.Drawing.Size(111, 32);
             this.DifficultyLabel.TabIndex = 2;
             this.DifficultyLabel.Text = "Difficulty";
             // 
@@ -378,10 +373,10 @@
             this.DifficultyEasyRadioButton.AutoSize = true;
             this.DifficultyEasyRadioButton.Checked = true;
             this.DifficultyEasyRadioButton.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.DifficultyEasyRadioButton.Location = new System.Drawing.Point(108, 42);
-            this.DifficultyEasyRadioButton.Margin = new System.Windows.Forms.Padding(2);
+            this.DifficultyEasyRadioButton.Location = new System.Drawing.Point(144, 52);
+            this.DifficultyEasyRadioButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.DifficultyEasyRadioButton.Name = "DifficultyEasyRadioButton";
-            this.DifficultyEasyRadioButton.Size = new System.Drawing.Size(48, 19);
+            this.DifficultyEasyRadioButton.Size = new System.Drawing.Size(59, 24);
             this.DifficultyEasyRadioButton.TabIndex = 3;
             this.DifficultyEasyRadioButton.TabStop = true;
             this.DifficultyEasyRadioButton.Text = "Easy";
@@ -391,10 +386,10 @@
             // 
             this.DifficultyMediumRadioButton.AutoSize = true;
             this.DifficultyMediumRadioButton.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.DifficultyMediumRadioButton.Location = new System.Drawing.Point(168, 42);
-            this.DifficultyMediumRadioButton.Margin = new System.Windows.Forms.Padding(2);
+            this.DifficultyMediumRadioButton.Location = new System.Drawing.Point(224, 52);
+            this.DifficultyMediumRadioButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.DifficultyMediumRadioButton.Name = "DifficultyMediumRadioButton";
-            this.DifficultyMediumRadioButton.Size = new System.Drawing.Size(70, 19);
+            this.DifficultyMediumRadioButton.Size = new System.Drawing.Size(85, 24);
             this.DifficultyMediumRadioButton.TabIndex = 4;
             this.DifficultyMediumRadioButton.Text = "Medium";
             this.DifficultyMediumRadioButton.UseVisualStyleBackColor = true;
@@ -403,10 +398,10 @@
             // 
             this.DifficultyHardRadioButton.AutoSize = true;
             this.DifficultyHardRadioButton.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.DifficultyHardRadioButton.Location = new System.Drawing.Point(246, 42);
-            this.DifficultyHardRadioButton.Margin = new System.Windows.Forms.Padding(2);
+            this.DifficultyHardRadioButton.Location = new System.Drawing.Point(328, 52);
+            this.DifficultyHardRadioButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.DifficultyHardRadioButton.Name = "DifficultyHardRadioButton";
-            this.DifficultyHardRadioButton.Size = new System.Drawing.Size(51, 19);
+            this.DifficultyHardRadioButton.Size = new System.Drawing.Size(63, 24);
             this.DifficultyHardRadioButton.TabIndex = 5;
             this.DifficultyHardRadioButton.Text = "Hard";
             this.DifficultyHardRadioButton.UseVisualStyleBackColor = true;
@@ -419,20 +414,20 @@
             this.CategoriesGroupBox.Controls.Add(this.CategoriesScienceCheckBox);
             this.CategoriesGroupBox.Controls.Add(this.CategoriesSportCheckBox);
             this.CategoriesGroupBox.Controls.Add(this.CategoriesLabel);
-            this.CategoriesGroupBox.Location = new System.Drawing.Point(148, 373);
-            this.CategoriesGroupBox.Margin = new System.Windows.Forms.Padding(2);
+            this.CategoriesGroupBox.Location = new System.Drawing.Point(197, 459);
+            this.CategoriesGroupBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.CategoriesGroupBox.Name = "CategoriesGroupBox";
-            this.CategoriesGroupBox.Padding = new System.Windows.Forms.Padding(2);
-            this.CategoriesGroupBox.Size = new System.Drawing.Size(314, 87);
+            this.CategoriesGroupBox.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.CategoriesGroupBox.Size = new System.Drawing.Size(419, 107);
             this.CategoriesGroupBox.TabIndex = 24;
             this.CategoriesGroupBox.TabStop = false;
             // 
             // NewGameForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Window;
-            this.ClientSize = new System.Drawing.Size(608, 551);
+            this.ClientSize = new System.Drawing.Size(811, 678);
             this.Controls.Add(this.LogoPictureBox);
             this.Controls.Add(this.menuStrip1);
             this.Controls.Add(this.NewGameStartButton);
@@ -443,6 +438,8 @@
             this.Controls.Add(this.CategoriesGroupBox);
             this.Controls.Add(this.RopePictureBox2);
             this.Controls.Add(this.RopePictureBox);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "NewGameForm";
             this.Text = "New Game";
             ((System.ComponentModel.ISupportInitialize)(this.LogoPictureBox)).EndInit();

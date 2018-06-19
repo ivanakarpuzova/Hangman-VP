@@ -42,9 +42,10 @@
             // 
             this.HardLabel.AutoSize = true;
             this.HardLabel.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.HardLabel.Location = new System.Drawing.Point(643, 97);
+            this.HardLabel.Location = new System.Drawing.Point(857, 119);
+            this.HardLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.HardLabel.Name = "HardLabel";
-            this.HardLabel.Size = new System.Drawing.Size(43, 20);
+            this.HardLabel.Size = new System.Drawing.Size(57, 25);
             this.HardLabel.TabIndex = 16;
             this.HardLabel.Text = "Hard";
             // 
@@ -52,9 +53,10 @@
             // 
             this.MediumLabel.AutoSize = true;
             this.MediumLabel.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.MediumLabel.Location = new System.Drawing.Point(366, 97);
+            this.MediumLabel.Location = new System.Drawing.Point(488, 119);
+            this.MediumLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.MediumLabel.Name = "MediumLabel";
-            this.MediumLabel.Size = new System.Drawing.Size(67, 20);
+            this.MediumLabel.Size = new System.Drawing.Size(86, 25);
             this.MediumLabel.TabIndex = 15;
             this.MediumLabel.Text = "Medium";
             // 
@@ -62,9 +64,10 @@
             // 
             this.EasyLabel.AutoSize = true;
             this.EasyLabel.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.EasyLabel.Location = new System.Drawing.Point(114, 97);
+            this.EasyLabel.Location = new System.Drawing.Point(152, 119);
+            this.EasyLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.EasyLabel.Name = "EasyLabel";
-            this.EasyLabel.Size = new System.Drawing.Size(40, 20);
+            this.EasyLabel.Size = new System.Drawing.Size(50, 25);
             this.EasyLabel.TabIndex = 14;
             this.EasyLabel.Text = "Easy";
             // 
@@ -72,31 +75,32 @@
             // 
             this.PlayersHighScoreListHard.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F);
             this.PlayersHighScoreListHard.FormattingEnabled = true;
-            this.PlayersHighScoreListHard.ItemHeight = 17;
-            this.PlayersHighScoreListHard.Location = new System.Drawing.Point(559, 142);
-            this.PlayersHighScoreListHard.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.PlayersHighScoreListHard.ItemHeight = 22;
+            this.PlayersHighScoreListHard.Location = new System.Drawing.Point(745, 175);
+            this.PlayersHighScoreListHard.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.PlayersHighScoreListHard.Name = "PlayersHighScoreListHard";
-            this.PlayersHighScoreListHard.Size = new System.Drawing.Size(223, 310);
+            this.PlayersHighScoreListHard.Size = new System.Drawing.Size(296, 378);
             this.PlayersHighScoreListHard.TabIndex = 13;
             // 
             // PlayersHighScoreListMedium
             // 
             this.PlayersHighScoreListMedium.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F);
             this.PlayersHighScoreListMedium.FormattingEnabled = true;
-            this.PlayersHighScoreListMedium.ItemHeight = 17;
-            this.PlayersHighScoreListMedium.Location = new System.Drawing.Point(298, 142);
-            this.PlayersHighScoreListMedium.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.PlayersHighScoreListMedium.ItemHeight = 22;
+            this.PlayersHighScoreListMedium.Location = new System.Drawing.Point(397, 175);
+            this.PlayersHighScoreListMedium.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.PlayersHighScoreListMedium.Name = "PlayersHighScoreListMedium";
-            this.PlayersHighScoreListMedium.Size = new System.Drawing.Size(223, 310);
+            this.PlayersHighScoreListMedium.Size = new System.Drawing.Size(296, 378);
             this.PlayersHighScoreListMedium.TabIndex = 12;
             // 
             // PlayersWithHighestScoresLabel
             // 
             this.PlayersWithHighestScoresLabel.AutoSize = true;
             this.PlayersWithHighestScoresLabel.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.PlayersWithHighestScoresLabel.Location = new System.Drawing.Point(294, 28);
+            this.PlayersWithHighestScoresLabel.Location = new System.Drawing.Point(392, 34);
+            this.PlayersWithHighestScoresLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.PlayersWithHighestScoresLabel.Name = "PlayersWithHighestScoresLabel";
-            this.PlayersWithHighestScoresLabel.Size = new System.Drawing.Size(198, 20);
+            this.PlayersWithHighestScoresLabel.Size = new System.Drawing.Size(247, 25);
             this.PlayersWithHighestScoresLabel.TabIndex = 11;
             this.PlayersWithHighestScoresLabel.Text = "Players with highest scores";
             // 
@@ -104,11 +108,11 @@
             // 
             this.PlayersHighScoreListEasy.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F);
             this.PlayersHighScoreListEasy.FormattingEnabled = true;
-            this.PlayersHighScoreListEasy.ItemHeight = 17;
-            this.PlayersHighScoreListEasy.Location = new System.Drawing.Point(37, 142);
-            this.PlayersHighScoreListEasy.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.PlayersHighScoreListEasy.ItemHeight = 22;
+            this.PlayersHighScoreListEasy.Location = new System.Drawing.Point(49, 175);
+            this.PlayersHighScoreListEasy.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.PlayersHighScoreListEasy.Name = "PlayersHighScoreListEasy";
-            this.PlayersHighScoreListEasy.Size = new System.Drawing.Size(223, 310);
+            this.PlayersHighScoreListEasy.Size = new System.Drawing.Size(296, 378);
             this.PlayersHighScoreListEasy.TabIndex = 10;
             // 
             // button1
@@ -117,10 +121,10 @@
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F);
             this.button1.ForeColor = System.Drawing.SystemColors.Window;
-            this.button1.Location = new System.Drawing.Point(298, 480);
-            this.button1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.button1.Location = new System.Drawing.Point(397, 591);
+            this.button1.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(223, 42);
+            this.button1.Size = new System.Drawing.Size(297, 52);
             this.button1.TabIndex = 9;
             this.button1.Text = "OK";
             this.button1.UseVisualStyleBackColor = false;
@@ -128,10 +132,10 @@
             // 
             // HighScoresForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Window;
-            this.ClientSize = new System.Drawing.Size(812, 542);
+            this.ClientSize = new System.Drawing.Size(1083, 667);
             this.Controls.Add(this.HardLabel);
             this.Controls.Add(this.MediumLabel);
             this.Controls.Add(this.EasyLabel);
@@ -140,6 +144,8 @@
             this.Controls.Add(this.PlayersWithHighestScoresLabel);
             this.Controls.Add(this.PlayersHighScoreListEasy);
             this.Controls.Add(this.button1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "HighScoresForm";
             this.Text = "HighScoresForm";
             this.ResumeLayout(false);
