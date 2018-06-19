@@ -462,5 +462,10 @@ namespace Hangman_VP
             InstructionsForm instructionsForm = new InstructionsForm();
             instructionsForm.Show();
         }
+
+        private void HintButton_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

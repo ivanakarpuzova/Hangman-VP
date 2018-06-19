@@ -106,6 +106,7 @@
             this.button50 = new System.Windows.Forms.Button();
             this.button51 = new System.Windows.Forms.Button();
             this.button52 = new System.Windows.Forms.Button();
+            this.HintButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.hangmanLeftLeg)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.hangmanBody)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.hangmanHead)).BeginInit();
@@ -1243,12 +1244,28 @@
             this.button52.UseVisualStyleBackColor = false;
             this.button52.Click += new System.EventHandler(this.letter_Clicked);
             // 
+            // HintButton
+            // 
+            this.HintButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(46)))), ((int)(((byte)(46)))));
+            this.HintButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.HintButton.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Bold);
+            this.HintButton.ForeColor = System.Drawing.SystemColors.Window;
+            this.HintButton.Location = new System.Drawing.Point(499, 47);
+            this.HintButton.Margin = new System.Windows.Forms.Padding(2);
+            this.HintButton.Name = "HintButton";
+            this.HintButton.Size = new System.Drawing.Size(183, 36);
+            this.HintButton.TabIndex = 35;
+            this.HintButton.Text = "HINT";
+            this.HintButton.UseVisualStyleBackColor = false;
+            this.HintButton.Click += new System.EventHandler(this.HintButton_Click);
+            // 
             // HangmanForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Window;
             this.ClientSize = new System.Drawing.Size(1160, 528);
+            this.Controls.Add(this.HintButton);
             this.Controls.Add(this.MacedonianKeyboard);
             this.Controls.Add(this.menuStrip1);
             this.Controls.Add(this.WordToGuessLabel);
@@ -1361,5 +1378,6 @@
         private System.Windows.Forms.Button button50;
         private System.Windows.Forms.Button button51;
         private System.Windows.Forms.Button button52;
+        private System.Windows.Forms.Button HintButton;
     }
 }
