@@ -22,6 +22,7 @@ namespace Hangman
         public HangmanForm(Game game)
         {
             InitializeComponent();
+
             Game = game;
             SetLanguage();
             InitializeTimer();
@@ -604,37 +605,21 @@ namespace Hangman
             //Земи ги зборовите според избраните категории, јазикот и тежина на зборовите која ја избрал играчот.
             if (!categoriesCompleted)
             {
-                /*
-                foreach (var category in Game.Categories)
-                {
-                    Words
-                        .AddRange(words
-                        .Where(d => d.Difficulty == Game.Difficulty)
-                        .Where(l => l.Language == Game.Language)
-                        .Where(c => c.Category == category)
-                        .ToList());
-                }
-                */
-
                 Words = words.Where(x => x.Difficulty == Game.Difficulty && x.Language == Game.Language && Game.Categories.Contains(x.Category)).ToList();
             }
             else
             {
-                foreach (var category in Game.Categories)
-                {
-                    Words
-                        .AddRange(words
-                        .Where(d => d.Difficulty == Game.Difficulty)
-                        .Where(l => l.Language == Game.Language)
-                        .Where(c => c.Category != category)
-                        .ToList());
-                }
+                //Ако ги завршил избраните категории..земи ги зборовите од останатите категории;
+                Words = words.Where(x => x.Difficulty == Game.Difficulty && x.Language == Game.Language && !Game.Categories.Contains(x.Category)).ToList();
             }
         }
 
         private void HangmanForm_KeyPress(object sender, KeyPressEventArgs e)
         {
             string buttonText = e.KeyChar.ToString().ToUpper();
+            if (buttonText == " ")
+                return;
+
             char letter = e.KeyChar.ToString().Trim().ToLower()[0];
 
             if (Game.Language == Language.English)
@@ -643,8 +628,8 @@ namespace Hangman
                 {
                     if (button.Text == buttonText && button.Enabled == true)
                     {
-                        ValidateLetter(letter);
                         button.Enabled = false;
+                        ValidateLetter(letter);
                     }
                 }
             }
@@ -654,8 +639,8 @@ namespace Hangman
                 {
                     if (button.Text == buttonText && button.Enabled == true)
                     {
-                        ValidateLetter(letter);
                         button.Enabled = false;
+                        ValidateLetter(letter);
                     }
                 }
             }
