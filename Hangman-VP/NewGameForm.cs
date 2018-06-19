@@ -118,5 +118,34 @@ namespace Hangman_VP
                 errorProvider1.SetError(PlayerNameTextBox, null);
             }
         }
+
+        private void newGameToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            PlayerNameTextBox.Text = string.Empty;
+            foreach (Control checkbox in CategoriesGroupBox.Controls)
+            {
+                if (checkbox is CheckBox)
+                {
+                    ((CheckBox)checkbox).Checked = false;
+                }
+            }
+        }
+
+        private void instructionsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            InstructionsForm instructionsForm = new InstructionsForm();
+            instructionsForm.Show();
+        }
+
+        private void quitGameToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void highScoresToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            HighScoresForm highScoresForm = new HighScoresForm();
+            highScoresForm.Show();
+        }
     }
 }

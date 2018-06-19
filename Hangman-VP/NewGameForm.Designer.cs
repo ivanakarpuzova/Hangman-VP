@@ -51,11 +51,18 @@
             this.DifficultyMediumRadioButton = new System.Windows.Forms.RadioButton();
             this.DifficultyHardRadioButton = new System.Windows.Forms.RadioButton();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.gameToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.newGameToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.instructionsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.quitGameToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.highScoresToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.CategoriesGroupBox.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.DifficultyGroupBox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
+            this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // NewGameStartButton
@@ -64,7 +71,7 @@
             this.NewGameStartButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.NewGameStartButton.Font = new System.Drawing.Font("Segoe UI", 21F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.NewGameStartButton.ForeColor = System.Drawing.SystemColors.Window;
-            this.NewGameStartButton.Location = new System.Drawing.Point(169, 427);
+            this.NewGameStartButton.Location = new System.Drawing.Point(172, 450);
             this.NewGameStartButton.Margin = new System.Windows.Forms.Padding(2);
             this.NewGameStartButton.Name = "NewGameStartButton";
             this.NewGameStartButton.Size = new System.Drawing.Size(314, 60);
@@ -77,7 +84,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Segoe Script", 21F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label5.Location = new System.Drawing.Point(209, 9);
+            this.label5.Location = new System.Drawing.Point(212, 32);
             this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(251, 46);
@@ -92,7 +99,7 @@
             this.CategoriesGroupBox.Controls.Add(this.CategoriesScienceCheckBox);
             this.CategoriesGroupBox.Controls.Add(this.CategoriesSportCheckBox);
             this.CategoriesGroupBox.Controls.Add(this.CategoriesLabel);
-            this.CategoriesGroupBox.Location = new System.Drawing.Point(169, 320);
+            this.CategoriesGroupBox.Location = new System.Drawing.Point(172, 343);
             this.CategoriesGroupBox.Margin = new System.Windows.Forms.Padding(2);
             this.CategoriesGroupBox.Name = "CategoriesGroupBox";
             this.CategoriesGroupBox.Padding = new System.Windows.Forms.Padding(2);
@@ -175,7 +182,7 @@
             // 
             this.groupBox3.Controls.Add(this.NameLabel);
             this.groupBox3.Controls.Add(this.PlayerNameTextBox);
-            this.groupBox3.Location = new System.Drawing.Point(169, 57);
+            this.groupBox3.Location = new System.Drawing.Point(172, 80);
             this.groupBox3.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Padding = new System.Windows.Forms.Padding(2);
@@ -209,7 +216,7 @@
             this.groupBox2.Controls.Add(this.LanguageMacedonianRadioButton);
             this.groupBox2.Controls.Add(this.LanguageEnglishRadioButton);
             this.groupBox2.Controls.Add(this.LanguageLabel);
-            this.groupBox2.Location = new System.Drawing.Point(169, 236);
+            this.groupBox2.Location = new System.Drawing.Point(172, 259);
             this.groupBox2.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Padding = new System.Windows.Forms.Padding(2);
@@ -261,7 +268,7 @@
             this.DifficultyGroupBox.Controls.Add(this.DifficultyMediumRadioButton);
             this.DifficultyGroupBox.Controls.Add(this.DifficultyHardRadioButton);
             this.DifficultyGroupBox.Font = new System.Drawing.Font("Symbol", 8.25F);
-            this.DifficultyGroupBox.Location = new System.Drawing.Point(169, 145);
+            this.DifficultyGroupBox.Location = new System.Drawing.Point(172, 168);
             this.DifficultyGroupBox.Margin = new System.Windows.Forms.Padding(2);
             this.DifficultyGroupBox.Name = "DifficultyGroupBox";
             this.DifficultyGroupBox.Padding = new System.Windows.Forms.Padding(2);
@@ -322,12 +329,64 @@
             // 
             this.errorProvider1.ContainerControl = this;
             // 
+            // menuStrip1
+            // 
+            this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.gameToolStripMenuItem,
+            this.highScoresToolStripMenuItem});
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Padding = new System.Windows.Forms.Padding(4, 2, 0, 2);
+            this.menuStrip1.Size = new System.Drawing.Size(648, 24);
+            this.menuStrip1.TabIndex = 34;
+            this.menuStrip1.Text = "Options";
+            // 
+            // gameToolStripMenuItem
+            // 
+            this.gameToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.newGameToolStripMenuItem,
+            this.instructionsToolStripMenuItem,
+            this.quitGameToolStripMenuItem});
+            this.gameToolStripMenuItem.Name = "gameToolStripMenuItem";
+            this.gameToolStripMenuItem.Size = new System.Drawing.Size(50, 20);
+            this.gameToolStripMenuItem.Text = "Game";
+            // 
+            // newGameToolStripMenuItem
+            // 
+            this.newGameToolStripMenuItem.Name = "newGameToolStripMenuItem";
+            this.newGameToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.newGameToolStripMenuItem.Text = "New Game";
+            this.newGameToolStripMenuItem.Click += new System.EventHandler(this.newGameToolStripMenuItem_Click);
+            // 
+            // instructionsToolStripMenuItem
+            // 
+            this.instructionsToolStripMenuItem.Name = "instructionsToolStripMenuItem";
+            this.instructionsToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.instructionsToolStripMenuItem.Text = "Instructions";
+            this.instructionsToolStripMenuItem.Click += new System.EventHandler(this.instructionsToolStripMenuItem_Click);
+            // 
+            // quitGameToolStripMenuItem
+            // 
+            this.quitGameToolStripMenuItem.Name = "quitGameToolStripMenuItem";
+            this.quitGameToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.quitGameToolStripMenuItem.Text = "Quit Game";
+            this.quitGameToolStripMenuItem.Click += new System.EventHandler(this.quitGameToolStripMenuItem_Click);
+            // 
+            // highScoresToolStripMenuItem
+            // 
+            this.highScoresToolStripMenuItem.Name = "highScoresToolStripMenuItem";
+            this.highScoresToolStripMenuItem.Size = new System.Drawing.Size(82, 20);
+            this.highScoresToolStripMenuItem.Text = "High Scores";
+            this.highScoresToolStripMenuItem.Click += new System.EventHandler(this.highScoresToolStripMenuItem_Click);
+            // 
             // NewGameForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Window;
-            this.ClientSize = new System.Drawing.Size(648, 503);
+            this.ClientSize = new System.Drawing.Size(648, 526);
+            this.Controls.Add(this.menuStrip1);
             this.Controls.Add(this.NewGameStartButton);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.CategoriesGroupBox);
@@ -345,6 +404,8 @@
             this.DifficultyGroupBox.ResumeLayout(false);
             this.DifficultyGroupBox.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
+            this.menuStrip1.ResumeLayout(false);
+            this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -373,5 +434,11 @@
         private System.Windows.Forms.RadioButton DifficultyMediumRadioButton;
         private System.Windows.Forms.RadioButton DifficultyHardRadioButton;
         private System.Windows.Forms.ErrorProvider errorProvider1;
+        private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem gameToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem newGameToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem instructionsToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem quitGameToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem highScoresToolStripMenuItem;
     }
 }

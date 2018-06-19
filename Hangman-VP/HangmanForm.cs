@@ -352,7 +352,7 @@ namespace Hangman_VP
                 new Word("детергент", "ПРОДУКТ за чистење", Difficulty.Medium, Language.Macedonian,Category.General),
                 new Word("тастатура", "Каде пишуваме", Difficulty.Medium, Language.Macedonian,Category.General),
                 new Word("наочари", "Ги носиме кога има сонце", Difficulty.Medium, Language.Macedonian,Category.General),
-
+            
                 //General, hard, macedonian
                 new Word("авокадо", "Овошче", Difficulty.Hard, Language.Macedonian,Category.General),
                 new Word("брава", "Кај што ги ставаме клучевите", Difficulty.Hard, Language.Macedonian,Category.General),
@@ -439,5 +439,28 @@ namespace Hangman_VP
             Words = words;
         }
 
+        private void highScoresToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            HighScoresForm highScoresForm = new HighScoresForm();
+            highScoresForm.Show();
+        }
+
+        private void newGameToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            NewGameForm newGameForm = new NewGameForm();
+            newGameForm.Show();
+            this.Close();
+        }
+
+        private void quitGameToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void instructionsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            InstructionsForm instructionsForm = new InstructionsForm();
+            instructionsForm.Show();
+        }
     }
 }

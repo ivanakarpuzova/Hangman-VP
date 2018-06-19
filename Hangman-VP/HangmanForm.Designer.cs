@@ -63,11 +63,17 @@
             this.button28 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.TimerLabel = new System.Windows.Forms.Label();
             this.WrongLettersLabel = new System.Windows.Forms.Label();
             this.CategoryLabel = new System.Windows.Forms.Label();
             this.WrongoLettersLabel = new System.Windows.Forms.Label();
             this.WordToGuessLabel = new System.Windows.Forms.Label();
-            this.TimerLabel = new System.Windows.Forms.Label();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.gameToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.newGameToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.instructionsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.quitGameToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.highScoresToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.hangmanLeftLeg)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.hangmanBody)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.hangmanHead)).BeginInit();
@@ -77,6 +83,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.BasePictureBox)).BeginInit();
             this.EnglishKeyboard.SuspendLayout();
             this.groupBox1.SuspendLayout();
+            this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // hangmanLeftLeg
@@ -589,6 +596,17 @@
             this.groupBox1.TabIndex = 31;
             this.groupBox1.TabStop = false;
             // 
+            // TimerLabel
+            // 
+            this.TimerLabel.AutoSize = true;
+            this.TimerLabel.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.TimerLabel.Location = new System.Drawing.Point(4, 112);
+            this.TimerLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.TimerLabel.Name = "TimerLabel";
+            this.TimerLabel.Size = new System.Drawing.Size(103, 30);
+            this.TimerLabel.TabIndex = 33;
+            this.TimerLabel.Text = "Time left:";
+            // 
             // WrongLettersLabel
             // 
             this.WrongLettersLabel.AutoSize = true;
@@ -634,16 +652,56 @@
             this.WordToGuessLabel.TabIndex = 32;
             this.WordToGuessLabel.Text = "Б Е С И Л К А ";
             // 
-            // TimerLabel
+            // menuStrip1
             // 
-            this.TimerLabel.AutoSize = true;
-            this.TimerLabel.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.TimerLabel.Location = new System.Drawing.Point(4, 112);
-            this.TimerLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.TimerLabel.Name = "TimerLabel";
-            this.TimerLabel.Size = new System.Drawing.Size(103, 30);
-            this.TimerLabel.TabIndex = 33;
-            this.TimerLabel.Text = "Time left:";
+            this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.gameToolStripMenuItem,
+            this.highScoresToolStripMenuItem});
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Padding = new System.Windows.Forms.Padding(4, 2, 0, 2);
+            this.menuStrip1.Size = new System.Drawing.Size(1160, 24);
+            this.menuStrip1.TabIndex = 33;
+            this.menuStrip1.Text = "Options";
+            // 
+            // gameToolStripMenuItem
+            // 
+            this.gameToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.newGameToolStripMenuItem,
+            this.instructionsToolStripMenuItem,
+            this.quitGameToolStripMenuItem});
+            this.gameToolStripMenuItem.Name = "gameToolStripMenuItem";
+            this.gameToolStripMenuItem.Size = new System.Drawing.Size(50, 20);
+            this.gameToolStripMenuItem.Text = "Game";
+            // 
+            // newGameToolStripMenuItem
+            // 
+            this.newGameToolStripMenuItem.Name = "newGameToolStripMenuItem";
+            this.newGameToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.newGameToolStripMenuItem.Text = "New Game";
+            this.newGameToolStripMenuItem.Click += new System.EventHandler(this.newGameToolStripMenuItem_Click);
+            // 
+            // instructionsToolStripMenuItem
+            // 
+            this.instructionsToolStripMenuItem.Name = "instructionsToolStripMenuItem";
+            this.instructionsToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.instructionsToolStripMenuItem.Text = "Instructions";
+            this.instructionsToolStripMenuItem.Click += new System.EventHandler(this.instructionsToolStripMenuItem_Click);
+            // 
+            // quitGameToolStripMenuItem
+            // 
+            this.quitGameToolStripMenuItem.Name = "quitGameToolStripMenuItem";
+            this.quitGameToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.quitGameToolStripMenuItem.Text = "Quit Game";
+            this.quitGameToolStripMenuItem.Click += new System.EventHandler(this.quitGameToolStripMenuItem_Click);
+            // 
+            // highScoresToolStripMenuItem
+            // 
+            this.highScoresToolStripMenuItem.Name = "highScoresToolStripMenuItem";
+            this.highScoresToolStripMenuItem.Size = new System.Drawing.Size(82, 20);
+            this.highScoresToolStripMenuItem.Text = "High Scores";
+            this.highScoresToolStripMenuItem.Click += new System.EventHandler(this.highScoresToolStripMenuItem_Click);
             // 
             // HangmanForm
             // 
@@ -651,6 +709,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Window;
             this.ClientSize = new System.Drawing.Size(1160, 528);
+            this.Controls.Add(this.menuStrip1);
             this.Controls.Add(this.WordToGuessLabel);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.EnglishKeyboard);
@@ -673,6 +732,8 @@
             this.EnglishKeyboard.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            this.menuStrip1.ResumeLayout(false);
+            this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -720,5 +781,11 @@
         private System.Windows.Forms.Label WrongoLettersLabel;
         private System.Windows.Forms.Label WordToGuessLabel;
         private System.Windows.Forms.Label TimerLabel;
+        private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem gameToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem newGameToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem instructionsToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem quitGameToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem highScoresToolStripMenuItem;
     }
 }
