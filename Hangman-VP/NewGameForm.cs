@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Hangman_VP
 {
-    public partial class Form1 : Form
+    public partial class NewGameForm : Form
     {
-        public Form1()
+        public NewGameForm()
         {
             InitializeComponent();
         }
