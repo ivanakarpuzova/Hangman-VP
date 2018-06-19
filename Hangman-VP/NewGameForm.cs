@@ -94,7 +94,10 @@ namespace Hangman_VP
 
             }
 
-            HangmanForm hangmanForm = new HangmanForm();
+            Player player = new Player(name, 0);
+            Game game = new Game(player, difficulty, language, categories);
+
+            HangmanForm hangmanForm = new HangmanForm(game);
             this.Hide();
             if (hangmanForm.ShowDialog() == System.Windows.Forms.DialogResult.OK)
             {
