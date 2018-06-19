@@ -45,7 +45,8 @@ namespace Hangman_VP
         //Генерира random збор од листата - Words
         private void GenerateDisplayWord()
         {
-            Word = Words.ElementAt(30);
+            int index = new Random().Next(0, Words.Count);
+            Word = Words.ElementAt(index);
             string word = Word.Name.ToUpper()[0].ToString();
             for (var i = 0; i < Word.Name.Length - 1; i++)
             {
