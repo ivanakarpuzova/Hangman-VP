@@ -62,6 +62,11 @@
             this.button11 = new System.Windows.Forms.Button();
             this.button28 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.WrongLettersLabel = new System.Windows.Forms.Label();
+            this.CategoryLabel = new System.Windows.Forms.Label();
+            this.WrongoLettersLabel = new System.Windows.Forms.Label();
+            this.WordToGuessLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.hangmanLeftLeg)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.hangmanBody)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.hangmanHead)).BeginInit();
@@ -70,6 +75,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.hangmanRightLeg)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.BasePictureBox)).BeginInit();
             this.EnglishKeyboard.SuspendLayout();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // hangmanLeftLeg
@@ -170,7 +176,7 @@
             this.EnglishKeyboard.Controls.Add(this.button11);
             this.EnglishKeyboard.Controls.Add(this.button28);
             this.EnglishKeyboard.Controls.Add(this.button1);
-            this.EnglishKeyboard.Location = new System.Drawing.Point(21, 353);
+            this.EnglishKeyboard.Location = new System.Drawing.Point(11, 353);
             this.EnglishKeyboard.Margin = new System.Windows.Forms.Padding(2);
             this.EnglishKeyboard.Name = "EnglishKeyboard";
             this.EnglishKeyboard.Padding = new System.Windows.Forms.Padding(2);
@@ -568,12 +574,72 @@
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.letter_Clicked);
             // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.WrongLettersLabel);
+            this.groupBox1.Controls.Add(this.CategoryLabel);
+            this.groupBox1.Controls.Add(this.WrongoLettersLabel);
+            this.groupBox1.Location = new System.Drawing.Point(11, 23);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(2);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(2);
+            this.groupBox1.Size = new System.Drawing.Size(366, 158);
+            this.groupBox1.TabIndex = 31;
+            this.groupBox1.TabStop = false;
+            // 
+            // WrongLettersLabel
+            // 
+            this.WrongLettersLabel.AutoSize = true;
+            this.WrongLettersLabel.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.WrongLettersLabel.Location = new System.Drawing.Point(4, 24);
+            this.WrongLettersLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.WrongLettersLabel.Name = "WrongLettersLabel";
+            this.WrongLettersLabel.Size = new System.Drawing.Size(162, 30);
+            this.WrongLettersLabel.TabIndex = 14;
+            this.WrongLettersLabel.Text = "Wrong Letters: ";
+            // 
+            // CategoryLabel
+            // 
+            this.CategoryLabel.AutoSize = true;
+            this.CategoryLabel.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.CategoryLabel.Location = new System.Drawing.Point(4, 66);
+            this.CategoryLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.CategoryLabel.Name = "CategoryLabel";
+            this.CategoryLabel.Size = new System.Drawing.Size(107, 30);
+            this.CategoryLabel.TabIndex = 18;
+            this.CategoryLabel.Text = "Category:";
+            // 
+            // WrongoLettersLabel
+            // 
+            this.WrongoLettersLabel.AutoSize = true;
+            this.WrongoLettersLabel.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.WrongoLettersLabel.Location = new System.Drawing.Point(164, 24);
+            this.WrongoLettersLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.WrongoLettersLabel.Name = "WrongoLettersLabel";
+            this.WrongoLettersLabel.Size = new System.Drawing.Size(22, 30);
+            this.WrongoLettersLabel.TabIndex = 15;
+            this.WrongoLettersLabel.Text = "_";
+            // 
+            // WordToGuessLabel
+            // 
+            this.WordToGuessLabel.AutoSize = true;
+            this.WordToGuessLabel.Font = new System.Drawing.Font("Segoe Script", 32.2F, System.Drawing.FontStyle.Bold);
+            this.WordToGuessLabel.Location = new System.Drawing.Point(17, 255);
+            this.WordToGuessLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.WordToGuessLabel.MaximumSize = new System.Drawing.Size(750, 406);
+            this.WordToGuessLabel.Name = "WordToGuessLabel";
+            this.WordToGuessLabel.Size = new System.Drawing.Size(402, 71);
+            this.WordToGuessLabel.TabIndex = 32;
+            this.WordToGuessLabel.Text = "Б Е С И Л К А ";
+            // 
             // HangmanForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Window;
             this.ClientSize = new System.Drawing.Size(1160, 528);
+            this.Controls.Add(this.WordToGuessLabel);
+            this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.EnglishKeyboard);
             this.Controls.Add(this.hangmanLeftLeg);
             this.Controls.Add(this.hangmanBody);
@@ -592,7 +658,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.hangmanRightLeg)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.BasePictureBox)).EndInit();
             this.EnglishKeyboard.ResumeLayout(false);
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -632,5 +701,10 @@
         private System.Windows.Forms.Button button11;
         private System.Windows.Forms.Button button28;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.Label WrongLettersLabel;
+        private System.Windows.Forms.Label CategoryLabel;
+        private System.Windows.Forms.Label WrongoLettersLabel;
+        private System.Windows.Forms.Label WordToGuessLabel;
     }
 }

@@ -17,13 +17,16 @@ namespace Hangman_VP
         public Game Game { get; set; }
 
         public List<Word> Words { get; set; }
-        public List<Word> Word { get; set; }
+        public Word Word { get; set; }
         public int Mistakes { get; set; }
 
         public HangmanForm(Game game)
         {
             InitializeComponent();
+
             DisplayHangmanAndBase();
+            LoadWords();
+            GenerateDisplayWord();
             Game = game;
         }
 
@@ -49,6 +52,11 @@ namespace Hangman_VP
                 new Word("trees", "We need them for oxygen", Difficulty.Easy, Language.English, Category.General),
                 new Word("guitar", "Instrument", Difficulty.Easy, Language.English, Category.General),
                 new Word("bear", "Wild fuzzy animal", Difficulty.Easy, Language.English, Category.General),
+                new Word("milk", "Product of an animal", Difficulty.Easy, Language.English, Category.General),
+                new Word("spider", "Insect", Difficulty.Easy, Language.English, Category.General),
+                new Word("triangle", "A geometric shape", Difficulty.Easy, Language.English, Category.General),
+                new Word("garbage", "You dispose it", Difficulty.Easy, Language.English, Category.General),
+                new Word("alcohol", "Beverage", Difficulty.Easy, Language.English, Category.General),
 
                 //General, medium, english
                 new Word("tesseract", "Abstract geometric shape", Difficulty.Medium, Language.English, Category.General),
@@ -65,8 +73,9 @@ namespace Hangman_VP
                 new Word("wristwatch", "See your wrists?", Difficulty.Hard, Language.English, Category.General),
                 new Word("avocado", "Looks like a pear", Difficulty.Hard, Language.English, Category.General),
                 new Word("keyhole", "Where do we put our key in?", Difficulty.Hard, Language.English, Category.General),
+                new Word("glowworm", "It moves slowly", Difficulty.Hard, Language.English, Category.General),
+                new Word("duplex", "Two story apartment", Difficulty.Hard, Language.English, Category.General),
 
-                
                 //Sport, easy, english
                 new Word("basketball", "Five on five game", Difficulty.Easy, Language.English, Category.Sport),
                 new Word("soccer", "Game played by two teams", Difficulty.Easy, Language.English, Category.Sport),
@@ -128,6 +137,154 @@ namespace Hangman_VP
                 new Word("antimatter", "Antiparticles", Difficulty.Hard, Language.English, Category.Science),
                 new Word("elelctromagnet", "Type of magnet", Difficulty.Hard, Language.English, Category.Science),
                 new Word("illuminate", "Alternative to transform", Difficulty.Hard, Language.English, Category.Science),
+
+                //Movies, easy, english
+                new Word("hollywood", "Where the most famous movies come from", Difficulty.Easy, Language.English, Category.Movies),
+                new Word("marvel", "Where the most awesome movies come from", Difficulty.Easy, Language.English, Category.Movies),
+                new Word("batman", "Dark Knight", Difficulty.Easy, Language.English, Category.Movies),
+                new Word("spiderman", "Radioactive teenager", Difficulty.Easy, Language.English, Category.Movies),
+                new Word("superman", "Really strong", Difficulty.Easy, Language.English, Category.Movies),
+                new Word("avengers", "A group of the most powerfull superheroes", Difficulty.Easy, Language.English, Category.Movies),
+                new Word("deadpool", "Area filled with water which is dead", Difficulty.Easy, Language.English, Category.Movies),
+                new Word("starwars", "Geeky nerds love it", Difficulty.Easy, Language.English, Category.Movies),
+
+                //Movies, medium, english
+                new Word("incredibles", "Animated movie", Difficulty.Medium, Language.English, Category.Movies),
+                new Word("thorragnarok", "Norse god", Difficulty.Medium, Language.English, Category.Movies),
+                new Word("blackpanther", "A cat that is not white", Difficulty.Medium, Language.English, Category.Movies),
+                new Word("jumanji", "Involves a game, a really weird one", Difficulty.Medium, Language.English, Category.Movies),
+                new Word("venom", "Involves spiderman", Difficulty.Medium, Language.English, Category.Movies),
+                new Word("aquaman", "Marvel superhero", Difficulty.Medium, Language.English, Category.Movies),
+                new Word("split", "Multiple personallity disorder", Difficulty.Medium, Language.English, Category.Movies),
+                new Word("unbreakable", "Prequel to Split, Bruce Willis is the main actor", Difficulty.Medium, Language.English, Category.Movies),
+
+                //Movies, hard, english
+                new Word("wolverine", "Claws", Difficulty.Hard, Language.English, Category.Movies),
+                new Word("wonderwoman", "Girl power", Difficulty.Hard, Language.English, Category.Movies),
+                new Word("justiceleague", "A hard word to guess because avengers are the kings", Difficulty.Hard, Language.English, Category.Movies),
+                new Word("assassinscreed", "Ancient cult", Difficulty.Hard, Language.English, Category.Movies),
+
+                 //Geography, easy, english
+                new Word("east", "Compass", Difficulty.Easy, Language.English, Category.Geography),
+                new Word("west", "Compass", Difficulty.Easy, Language.English, Category.Geography),
+                new Word("south", "Compass", Difficulty.Easy, Language.English, Category.Geography),
+                new Word("north", "Compass", Difficulty.Easy, Language.English, Category.Geography),
+                new Word("mountain", "We climb it", Difficulty.Easy, Language.English, Category.Geography),
+                new Word("border", "You probbably need a passport to cross it", Difficulty.Easy, Language.English, Category.Geography),
+                new Word("region", "Area", Difficulty.Easy, Language.English, Category.Geography),
+                new Word("atlas", "Really cool book", Difficulty.Easy, Language.English, Category.Geography),
+
+                //Geography, medium, english
+                new Word("latitude", "Coordinates", Difficulty.Medium, Language.English, Category.Geography),
+                new Word("longitude", "Coordinates", Difficulty.Medium, Language.English, Category.Geography),
+                new Word("skopje", "Macedonia", Difficulty.Medium, Language.English, Category.Geography),
+                new Word("newyork", "USA", Difficulty.Medium, Language.English, Category.Geography),
+                new Word("mounteverest", "Really high", Difficulty.Medium, Language.English, Category.Geography),
+                new Word("antartica", "Really cold", Difficulty.Medium, Language.English, Category.Geography),
+                new Word("equator", "Sounds like the country", Difficulty.Medium, Language.English, Category.Geography),
+
+                //Geography, hard, english
+                new Word("uzbekistan", "Some country that ends with 'stan'", Difficulty.Hard, Language.English, Category.Geography),
+                new Word("cartography", "Some crafts about graphs or maps", Difficulty.Hard, Language.English, Category.Geography),
+                new Word("veles", "Lots of bitches in this small macedonian town", Difficulty.Hard, Language.English, Category.Geography),
+                new Word("geography", "Same word as this category", Difficulty.Hard, Language.English, Category.Geography),
+                new Word("topography", "Ends with 'graphy'", Difficulty.Hard, Language.English, Category.Geography),
+
+                //General, easy, macedonian
+                new Word("гитара", "Instrument", Difficulty.Easy, Language.Macedonian, Category.General),
+                new Word("мечка", "диво животно", Difficulty.Easy, Language.Macedonian, Category.General),
+                new Word("млеко", "Продукт од животно", Difficulty.Easy, Language.Macedonian,Category.General),
+                new Word("пајак", "Инсект", Difficulty.Easy, Language.Macedonian,Category.General),
+                new Word("триаголник", "Геометриска фигура", Difficulty.Easy, Language.Macedonian,Category.General),
+                new Word("алкохол", "ме густа", Difficulty.Easy, Language.Macedonian,Category.General),
+
+                //General, medium, macedonian
+                new Word("униврезитет", "Модерен метод за тортура", Difficulty.Medium, Language.Macedonian,Category.General),
+                new Word("детергент", "ПРОДУКТ за чистење", Difficulty.Medium, Language.Macedonian,Category.General),
+                new Word("тастатура", "Каде пишуваме", Difficulty.Medium, Language.Macedonian,Category.General),
+                new Word("наочари", "Ги носиме кога има сонце", Difficulty.Medium, Language.Macedonian,Category.General),
+
+                //General, hard, macedonian
+                new Word("авокадо", "Овошче", Difficulty.Hard, Language.Macedonian,Category.General),
+                new Word("брава", "Кај што ги ставаме клучевите", Difficulty.Hard, Language.Macedonian,Category.General),
+                new Word("црв", "Се движи бавно", Difficulty.Hard, Language.Macedonian,Category.General),
+                new Word("ѓубре", "Загадување", Difficulty.Hard, Language.Macedonian,Category.General),
+                new Word("галаксија", "Над небото", Difficulty.Hard, Language.Macedonian, Category.General),
+
+                //Sport, easy, macedonian
+                new Word("фудбал", "Игра за мажи", Difficulty.Easy, Language.Macedonian,Category.Sport),
+                new Word("тенис", "Се корситат рекети", Difficulty.Easy, Language.Macedonian,Category.Sport),
+                new Word("ватерполо", "Пливање и голови", Difficulty.Easy, Language.Macedonian,Category.Sport),
+                new Word("хокеј", "Лизгање на мраз", Difficulty.Easy, Language.Macedonian,Category.Sport),
+                new Word("ракомет", "Игра со мала топка", Difficulty.Easy, Language.Macedonian,Category.Sport),
+
+                //Sport, medium, macedonian
+                new Word("бадмингтон", "Игра со рекети",  Difficulty.Medium, Language.Macedonian,Category.Sport),
+                new Word("кајакарење", "Пловење ",  Difficulty.Medium, Language.Macedonian,Category.Sport),
+                new Word("борење", "Физички спорт",  Difficulty.Medium, Language.Macedonian,Category.Sport),
+                new Word("натпреварувач", "Игра со страст",  Difficulty.Medium, Language.Macedonian,Category.Sport),
+
+                //Sport, hard, macedonian
+                new Word("маратон", "Трчaње",  Difficulty.Hard, Language.Macedonian,Category.Sport),
+                new Word("атлетика", "започнува со буквата А", Difficulty.Hard, Language.Macedonian,Category.Sport),
+                new Word("ултрамаратонец", "Трча многу долги патеки",  Difficulty.Hard, Language.Macedonian,Category.Sport),
+
+                //Science, easy, macedonian
+                new Word("компјутер", "Многу моќен калкулатор ", Difficulty.Easy, Language.Macedonian,Category.Science),
+                new Word("смартфон", "За да се јавиш", Difficulty.Easy, Language.Macedonian,Category.Science),
+                new Word("енергија", "Концентрирана топлина, завршува на 'A'", Difficulty.Easy, Language.Macedonian,Category.Science),
+                new Word("метеор", "Камен кој патува низ вселената", Difficulty.Easy, Language.Macedonian,Category.Science),
+                new Word("универзум", "Најширокиот простор", Difficulty.Easy, Language.Macedonian,Category.Science),
+
+                //Science, medium, macedonian
+                new Word("телескоп", "Инструмет за гледање ѕвезди",  Difficulty.Medium, Language.Macedonian,Category.Science),
+                new Word("астероид", "Мало каменесто тело кое лебди низ вселената",  Difficulty.Medium, Language.Macedonian,Category.Science),
+                new Word("лабоораторија", "Друг збор за работилница",  Difficulty.Medium, Language.Macedonian,Category.Science),
+                new Word("магнетизам", "Привлекување",  Difficulty.Medium, Language.Macedonian,Category.Science),
+                new Word("термометар", "Мерење температура",  Difficulty.Medium, Language.Macedonian,Category.Science),
+
+                //Science, hard, macedonian
+                new Word("опсерваторија", "Кокино", Difficulty.Hard, Language.Macedonian,Category.Science),
+                new Word("метаморфоза", "Процес на трансофрмација", Difficulty.Hard, Language.Macedonian,Category.Science),
+                new Word("апсорпција", "Процес на конзумирање или соединување на нешто", Difficulty.Hard, Language.Macedonian,Category.Science),
+                new Word("астрофизика", "Гранка на астрономијата", Difficulty.Hard, Language.Macedonian,Category.Science),
+                new Word("анестезиологија", "Наука за анестезија", Difficulty.Hard, Language.Macedonian,Category.Science),
+
+                //Movies, easy, macedonian
+                new Word("холивуд", "Каде што се снимаат познати филмови", Difficulty.Easy, Language.Macedonian,Category.Movies),
+                new Word("марвел", "Каде ги има најјаките филмови", Difficulty.Easy, Language.Macedonian,Category.Movies),
+                new Word("бетмен", " Црниот витез од Готхам", Difficulty.Easy, Language.Macedonian,Category.Movies),
+                new Word("одмазници", "Одмаздници", Difficulty.Easy, Language.Macedonian, Category.Movies),
+                new Word("дедпул", "Мртов базен", Difficulty.Easy, Language.Macedonian, Category.Movies),
+                new Word("старварс", "Војната на звездите", Difficulty.Easy, Language.Macedonian, Category.Movies),
+
+                //Movies, medium, macedonian
+                new Word("неверојатни", "Анимиран филм", Difficulty.Medium, Language.Macedonian,Category.Movies),
+                new Word("торрагнарок", "Норски бог од митологијата", Difficulty.Medium, Language.Macedonian,Category.Movies),
+                new Word("црниотпантер", "Филм од марвел", Difficulty.Medium, Language.Macedonian, Category.Movies),
+                new Word("Џуманџи", "Робин Вилијамс глумеше во него", Difficulty.Medium, Language.Macedonian, Category.Movies),
+
+                //Movies, medium, hard
+                new Word("последождот", "Филм од Милчо Манчевски", Difficulty.Hard, Language.Macedonian, Category.Movies),
+                new Word("балканкан", "Најпознатиот филм на балканот", Difficulty.Hard, Language.Macedonian, Category.Movies),
+                new Word("бикинимун", "Каде ли ми е паметот?", Difficulty.Hard, Language.Macedonian, Category.Movies),
+                new Word("исцелител", "Иван И....... ?", Difficulty.Hard, Language.Macedonian, Category.Movies),
+
+                 //Geography, easy, macedonian
+                new Word("исток", "Компас", Difficulty.Easy, Language.Macedonian,Category.Geography),
+                new Word("запад",  "Компас", Difficulty.Easy, Language.Macedonian,Category.Geography),
+                new Word("север",  "Компас", Difficulty.Easy, Language.Macedonian,Category.Geography),
+                new Word("југ",  "Компас", Difficulty.Easy, Language.Macedonian,Category.Geography),
+               
+                //Geography, medium, macedonian
+                new Word("монтеверест", "Висок врв", Difficulty.Medium, Language.Macedonian,Category.Geography),
+                new Word("антартик", "Ладно", Difficulty.Medium, Language.Macedonian,Category.Geography),
+                new Word("еквадор", "Топло", Difficulty.Medium, Language.Macedonian,Category.Geography),
+
+                //Geography, hard, macedonian
+                new Word("узбекистан", "Исток", Difficulty.Hard, Language.Macedonian,Category.Geography),
+                new Word("пакистан", "Војна", Difficulty.Hard, Language.Macedonian,Category.Geography),
+
             };
 
             Words = words;
@@ -136,7 +293,13 @@ namespace Hangman_VP
         //Функција која генерира random збор од листата - Words
         private void GenerateDisplayWord()
         {
-
+            Word = Words.ElementAt(30);
+            string word = Word.Name.ToUpper()[0].ToString();
+            for (var i = 0; i < Word.Name.Length - 1; i++)
+            {
+                word += " _";
+            }
+            WordToGuessLabel.Text = word;
         }
 
         private void letter_Clicked(object sender, EventArgs e)
