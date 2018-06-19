@@ -14,6 +14,11 @@ namespace Hangman_VP
 {
     public partial class HangmanForm : Form
     {
+        private Timer Timer = new Timer();
+        private static int Time = 120;
+        private const int Interval = 1000;
+        public int TimeElapsed = 0;
+
         public Game Game { get; set; }
 
         public List<Word> Words { get; set; }
@@ -23,6 +28,9 @@ namespace Hangman_VP
         public HangmanForm(Game game)
         {
             InitializeComponent();
+
+            Timer.Tick += new EventHandler(timer_Tick);
+            Timer.Interval = Interval;
 
             DisplayHangmanAndBase();
             LoadWords();
@@ -45,6 +53,10 @@ namespace Hangman_VP
         //Генерира random збор од листата - Words
         private void GenerateDisplayWord()
         {
+            Timer.Stop();
+            TimeElapsed = 0;
+            Timer.Start();
+
             int index = new Random().Next(0, Words.Count);
             Word = Words.ElementAt(index);
             string word = Word.Name.ToUpper()[0].ToString();
@@ -97,6 +109,7 @@ namespace Hangman_VP
 
             if (Word.Name == word)
             {
+                Timer.Stop();
                 Game.Player.HighScore += 1;
                 //Избриши го зборот од листата, за да не се појави повторно
                 Words.Remove(Word);
@@ -137,6 +150,7 @@ namespace Hangman_VP
 
                 if (Mistakes >= 6)
                 {
+                    Timer.Stop();
                     MessageBox.Show($"Too bad, the correct word was: {Word.Name.ToUpper()}", "Woops you got hanged!");
                     GenerateDisplayWord();
                     return;
@@ -155,6 +169,26 @@ namespace Hangman_VP
 
             var letter = button.Text.ToLower()[0];
             ValidateLetter(letter);
+        }
+
+        //Ќе се извршува секоја секунда
+        private void timer_Tick(object sender, EventArgs e)
+        {
+            TimeElapsed++;
+            if (TimeElapsed <= Time)
+            {
+                int newTime = Time - TimeElapsed;
+                int min = newTime / 60;
+                int sec = newTime % 60;
+            }
+            else
+            {
+                Timer.Dispose();
+                TimeElapsed = 0;
+                Timer.Stop();
+                MessageBox.Show("Ви истече времето", "Истече времето..");
+                GenerateDisplayWord();
+            }
         }
 
         //Функција која ги генерира зборовите и ги сместува во листа - Words
