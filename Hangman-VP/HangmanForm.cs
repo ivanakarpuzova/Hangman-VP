@@ -23,7 +23,7 @@ namespace Hangman_VP
         public HangmanForm(Game game)
         {
             InitializeComponent();
-
+            DisplayHangmanAndBase();
             Game = game;
         }
 
@@ -137,6 +137,11 @@ namespace Hangman_VP
         private void GenerateDisplayWord()
         {
 
+        }
+
+        private void letter_Clicked(object sender, EventArgs e)
+        {
+            var button = (Button)sender;
         }
     }
 }

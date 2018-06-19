@@ -62,6 +62,9 @@
     <Compile Include="Models\Word.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="HangmanForm.resx">
+      <DependentUpon>HangmanForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="NewGameForm.resx">
       <DependentUpon>NewGameForm.cs</DependentUpon>
     </EmbeddedResource>
