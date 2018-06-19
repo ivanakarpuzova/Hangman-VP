@@ -57,6 +57,7 @@ namespace Hangman
             developersToolStripMenuItem.Text = LanguageSettings.Developers;
         }
 
+        //Го пушта тајмерот во зависност од тешкотијата на зборови избрана од играчот
         private void InitializeTimer()
         {
             if (Game.Difficulty == Difficulty.Easy)
@@ -77,6 +78,7 @@ namespace Hangman
 
         }
 
+        //Ги сетира сликите на апликацијата
         private void DisplayBase()
         {
             BasePictureBox.ImageLocation = @"Images\base.png";
@@ -88,6 +90,7 @@ namespace Hangman
             hangmanRightLeg.ImageLocation = @"Images\hangman-6.png";
         }
 
+        //Генерира random збор од листата од зборови, пушта тајмер за зборот
         private void GenerateDisplayWord()
         {
             Timer.Stop();
@@ -171,6 +174,7 @@ namespace Hangman
             hangmanRightLeg.Visible = false;
         }
 
+        //Го прави зборот од форма: U_I_E_R_I_TY во форма : U _ I _ E _ R _ I _ T  Y  -- со празни места изгледа поубаво во апликацијата
         private void UpdateDisplayWord(string word)
         {
             StringBuilder wordBuilder = new StringBuilder();
@@ -185,6 +189,7 @@ namespace Hangman
             WordToGuessLabel.Text = wordBuilder.ToString().ToUpper();
         }
 
+        //Ја валидира буквата дали постои во зборот и извришува дополнителни функции во зависност од тоа дали е валидна буквата или не
         private void ValidateLetter(char letter)
         {
             bool letterGuessIsCorrect = false;
@@ -256,6 +261,7 @@ namespace Hangman
             }
         }
 
+        //Кога ќе се кликне некоја буква од тастатурата, копчето се прави некликабилно (disabled) и се повикува функција за валидација на буквата
         private void letter_Clicked(object sender, EventArgs e)
         {
             var button = (Button)sender;
@@ -357,6 +363,45 @@ namespace Hangman
             }
 
             Settings.Default.Save();
+        }
+
+        //Event на целата форма, слуша за копче кликнато од тастатура, текстот на копчето се испраќа на ValidateLetter функцијата..
+        private void HangmanForm_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            string buttonText = e.KeyChar.ToString().ToUpper();
+            if (buttonText == " ")
+                return;
+
+            char letter = e.KeyChar.ToString().Trim().ToLower()[0];
+
+            if (Game.Language == Language.English)
+            {
+                foreach (Button button in EnglishKeyboard.Controls)
+                {
+                    if (button.Text == buttonText && button.Enabled == true)
+                    {
+                        button.Enabled = false;
+                        ValidateLetter(letter);
+                    }
+                }
+            }
+            else
+            {
+                foreach (Button button in MacedonianKeyboard.Controls)
+                {
+                    if (button.Text == buttonText && button.Enabled == true)
+                    {
+                        button.Enabled = false;
+                        ValidateLetter(letter);
+                    }
+                }
+            }
+        }
+
+        private void developersToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            DevelopersForm developersForm = new DevelopersForm();
+            developersForm.Show();
         }
 
         private void LoadWords(bool categoriesCompleted)
@@ -612,44 +657,6 @@ namespace Hangman
                 //Ако ги завршил избраните категории..земи ги зборовите од останатите категории;
                 Words = words.Where(x => x.Difficulty == Game.Difficulty && x.Language == Game.Language && !Game.Categories.Contains(x.Category)).ToList();
             }
-        }
-
-        private void HangmanForm_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            string buttonText = e.KeyChar.ToString().ToUpper();
-            if (buttonText == " ")
-                return;
-
-            char letter = e.KeyChar.ToString().Trim().ToLower()[0];
-
-            if (Game.Language == Language.English)
-            {
-                foreach (Button button in EnglishKeyboard.Controls)
-                {
-                    if (button.Text == buttonText && button.Enabled == true)
-                    {
-                        button.Enabled = false;
-                        ValidateLetter(letter);
-                    }
-                }
-            }
-            else
-            {
-                foreach (Button button in MacedonianKeyboard.Controls)
-                {
-                    if (button.Text == buttonText && button.Enabled == true)
-                    {
-                        button.Enabled = false;
-                        ValidateLetter(letter);
-                    }
-                }
-            }
-        }
-
-        private void developersToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            DevelopersForm developersForm = new DevelopersForm();
-            developersForm.Show();
         }
     }
 }
