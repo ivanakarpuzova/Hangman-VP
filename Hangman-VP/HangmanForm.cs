@@ -29,11 +29,11 @@ namespace Hangman_VP
         {
             InitializeComponent();
 
+            Game = game;
             InitializeTimer();
             DisplayHangmanAndBase();
             LoadWords();
             GenerateDisplayWord();
-            Game = game;
         }
 
         //Се мести времето во зависност од тежината избрана -- Easy - 3 минути, Medium - 2 минути, Hard - 1 минута
@@ -484,6 +484,35 @@ namespace Hangman_VP
         private void HintButton_Click(object sender, EventArgs e)
         {
             MessageBox.Show($"{Word.Hint}", "Hint");
+        }
+
+        private void HangmanForm_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            string buttonText = e.KeyChar.ToString().ToUpper();
+            char letter = e.KeyChar.ToString().Trim().ToLower()[0];
+
+            if (Game.Language == Language.English)
+            {
+                foreach (Button button in EnglishKeyboard.Controls)
+                {
+                    if (button.Text == buttonText && button.Enabled == true)
+                    {
+                        ValidateLetter(letter);
+                        button.Enabled = false;
+                    }
+                }
+            }
+            else
+            {
+                foreach (Button button in MacedonianKeyboard.Controls)
+                {
+                    if (button.Text == buttonText && button.Enabled == true)
+                    {
+                        ValidateLetter(letter);
+                        button.Enabled = false;
+                    }
+                }
+            }
         }
     }
 }

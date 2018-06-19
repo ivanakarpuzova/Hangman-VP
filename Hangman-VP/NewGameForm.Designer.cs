@@ -370,6 +370,7 @@
             this.NewGameStartButton.TabIndex = 36;
             this.NewGameStartButton.Text = "Start";
             this.NewGameStartButton.UseVisualStyleBackColor = false;
+            this.NewGameStartButton.Click += new System.EventHandler(this.NewGameStartButton_Click);
             // 
             // label5
             // 

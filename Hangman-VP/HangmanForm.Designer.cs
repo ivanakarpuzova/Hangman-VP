@@ -1278,8 +1278,10 @@
             this.Controls.Add(this.hangmanLeftArm);
             this.Controls.Add(this.hangmanRightLeg);
             this.Controls.Add(this.BasePictureBox);
+            this.KeyPreview = true;
             this.Name = "HangmanForm";
             this.Text = "HangmanForm";
+            this.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.HangmanForm_KeyPress);
             ((System.ComponentModel.ISupportInitialize)(this.hangmanLeftLeg)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.hangmanBody)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.hangmanHead)).EndInit();
