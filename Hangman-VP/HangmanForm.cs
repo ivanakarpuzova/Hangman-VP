@@ -53,6 +53,7 @@ namespace Hangman
             CategoryLabel.Text = LanguageSettings.CategoryLabel;
             TimerLabel.Text = LanguageSettings.TimeLeft;
             HintButton.Text = LanguageSettings.Hint;
+            developersToolStripMenuItem.Text = LanguageSettings.Developers;
         }
 
         private void InitializeTimer()
@@ -658,6 +659,12 @@ namespace Hangman
                     }
                 }
             }
+        }
+
+        private void developersToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            DevelopersForm developersForm = new DevelopersForm();
+            developersForm.Show();
         }
     }
 }

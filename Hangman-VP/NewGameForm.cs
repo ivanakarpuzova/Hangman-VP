@@ -191,5 +191,11 @@ namespace Hangman
             LanguageSettings.SetLanguage(Language.Macedonian);
             RefreshForm();
         }
+
+        private void developersToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            DevelopersForm developersForm = new DevelopersForm();
+            developersForm.Show();
+        }
     }
 }

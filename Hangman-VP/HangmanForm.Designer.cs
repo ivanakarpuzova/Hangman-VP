@@ -107,6 +107,7 @@
             this.button51 = new System.Windows.Forms.Button();
             this.button52 = new System.Windows.Forms.Button();
             this.HintButton = new System.Windows.Forms.Button();
+            this.developersToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.hangmanLeftLeg)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.hangmanBody)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.hangmanHead)).BeginInit();
@@ -691,7 +692,8 @@
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.gameToolStripMenuItem,
-            this.highScoresToolStripMenuItem});
+            this.highScoresToolStripMenuItem,
+            this.developersToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Padding = new System.Windows.Forms.Padding(4, 2, 0, 2);
@@ -1259,6 +1261,13 @@
             this.HintButton.UseVisualStyleBackColor = false;
             this.HintButton.Click += new System.EventHandler(this.HintButton_Click);
             // 
+            // developersToolStripMenuItem
+            // 
+            this.developersToolStripMenuItem.Name = "developersToolStripMenuItem";
+            this.developersToolStripMenuItem.Size = new System.Drawing.Size(77, 20);
+            this.developersToolStripMenuItem.Text = "Developers";
+            this.developersToolStripMenuItem.Click += new System.EventHandler(this.developersToolStripMenuItem_Click);
+            // 
             // HangmanForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1381,5 +1390,6 @@
         private System.Windows.Forms.Button button51;
         private System.Windows.Forms.Button button52;
         private System.Windows.Forms.Button HintButton;
+        private System.Windows.Forms.ToolStripMenuItem developersToolStripMenuItem;
     }
 }

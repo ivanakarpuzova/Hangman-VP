@@ -358,6 +358,7 @@
             this.developersToolStripMenuItem.Name = "developersToolStripMenuItem";
             this.developersToolStripMenuItem.Size = new System.Drawing.Size(77, 20);
             this.developersToolStripMenuItem.Text = "Developers";
+            this.developersToolStripMenuItem.Click += new System.EventHandler(this.developersToolStripMenuItem_Click);
             // 
             // NewGameStartButton
             // 
