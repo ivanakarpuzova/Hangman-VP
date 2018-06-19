@@ -616,6 +616,7 @@
             this.HintButton.TabIndex = 33;
             this.HintButton.Text = "HINT";
             this.HintButton.UseVisualStyleBackColor = false;
+            this.HintButton.Click += new System.EventHandler(this.HintButton_Click);
             // 
             // CategoryLabel
             // 

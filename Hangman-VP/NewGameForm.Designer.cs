@@ -101,30 +101,35 @@
             this.developersToolStripMenuItem.Name = "developersToolStripMenuItem";
             this.developersToolStripMenuItem.Size = new System.Drawing.Size(77, 20);
             this.developersToolStripMenuItem.Text = "Developers";
+            this.developersToolStripMenuItem.Click += new System.EventHandler(this.developersToolStripMenuItem_Click);
             // 
             // highScoresToolStripMenuItem
             // 
             this.highScoresToolStripMenuItem.Name = "highScoresToolStripMenuItem";
             this.highScoresToolStripMenuItem.Size = new System.Drawing.Size(82, 20);
             this.highScoresToolStripMenuItem.Text = "High Scores";
+            this.highScoresToolStripMenuItem.Click += new System.EventHandler(this.highScoresToolStripMenuItem_Click);
             // 
             // quitGameToolStripMenuItem
             // 
             this.quitGameToolStripMenuItem.Name = "quitGameToolStripMenuItem";
-            this.quitGameToolStripMenuItem.Size = new System.Drawing.Size(136, 22);
+            this.quitGameToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.quitGameToolStripMenuItem.Text = "Quit Game";
+            this.quitGameToolStripMenuItem.Click += new System.EventHandler(this.quitGameToolStripMenuItem_Click);
             // 
             // instructionsToolStripMenuItem
             // 
             this.instructionsToolStripMenuItem.Name = "instructionsToolStripMenuItem";
-            this.instructionsToolStripMenuItem.Size = new System.Drawing.Size(136, 22);
+            this.instructionsToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.instructionsToolStripMenuItem.Text = "Instructions";
+            this.instructionsToolStripMenuItem.Click += new System.EventHandler(this.instructionsToolStripMenuItem_Click);
             // 
             // newGameToolStripMenuItem
             // 
             this.newGameToolStripMenuItem.Name = "newGameToolStripMenuItem";
-            this.newGameToolStripMenuItem.Size = new System.Drawing.Size(136, 22);
+            this.newGameToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.newGameToolStripMenuItem.Text = "New Game";
+            this.newGameToolStripMenuItem.Click += new System.EventHandler(this.newGameToolStripMenuItem_Click);
             // 
             // gameToolStripMenuItem
             // 
@@ -163,6 +168,7 @@
             this.NewGameStartButton.TabIndex = 26;
             this.NewGameStartButton.Text = "Start";
             this.NewGameStartButton.UseVisualStyleBackColor = false;
+            this.NewGameStartButton.Click += new System.EventHandler(this.NewGameStartButton_Click);
             // 
             // label5
             // 
@@ -214,7 +220,7 @@
             // 
             this.CategoriesGeographyCheckBox.AutoSize = true;
             this.CategoriesGeographyCheckBox.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.CategoriesGeographyCheckBox.Location = new System.Drawing.Point(154, 63);
+            this.CategoriesGeographyCheckBox.Location = new System.Drawing.Point(154, 62);
             this.CategoriesGeographyCheckBox.Margin = new System.Windows.Forms.Padding(2);
             this.CategoriesGeographyCheckBox.Name = "CategoriesGeographyCheckBox";
             this.CategoriesGeographyCheckBox.Size = new System.Drawing.Size(84, 19);
@@ -301,6 +307,7 @@
             this.LanguageMacedonianRadioButton.TabStop = true;
             this.LanguageMacedonianRadioButton.Text = "Macedonian";
             this.LanguageMacedonianRadioButton.UseVisualStyleBackColor = true;
+            this.LanguageMacedonianRadioButton.CheckedChanged += new System.EventHandler(this.LanguageMacedonianRadioButton_CheckedChanged);
             // 
             // LanguageEnglishRadioButton
             // 
@@ -314,6 +321,7 @@
             this.LanguageEnglishRadioButton.TabStop = true;
             this.LanguageEnglishRadioButton.Text = "English";
             this.LanguageEnglishRadioButton.UseVisualStyleBackColor = true;
+            this.LanguageEnglishRadioButton.CheckedChanged += new System.EventHandler(this.LanguageEnglishRadioButton_CheckedChanged);
             // 
             // groupBox2
             // 
