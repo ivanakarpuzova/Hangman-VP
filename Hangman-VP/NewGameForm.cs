@@ -24,6 +24,10 @@ namespace Hangman_VP
             CategoriesScienceCheckBox.Checked = true;
             CategoriesMoviesCheckBox.Checked = true;
             CategoriesGeographyCheckBox.Checked = true;
+
+            RopePictureBox.ImageLocation = @"Images\rope.jpg";
+            RopePictureBox2.ImageLocation = @"Images\rope.jpg";
+            LogoPictureBox.ImageLocation = @"Images\logo.png";
         }
 
         private void NewGameStartButton_Click(object sender, EventArgs e)
