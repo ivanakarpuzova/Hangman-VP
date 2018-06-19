@@ -18,9 +18,7 @@ namespace Hangman_VP
         private static int Time { get; set; }
         private const int Interval = 1000;
         public int TimeElapsed = 0;
-
         public Game Game { get; set; }
-
         public List<Word> Words { get; set; }
         public Word Word { get; set; }
         public int Mistakes { get; set; }
@@ -28,15 +26,39 @@ namespace Hangman_VP
         public HangmanForm(Game game)
         {
             InitializeComponent();
-
             Game = game;
+            SetLanguage();
             InitializeTimer();
-            DisplayHangmanAndBase();
-            LoadWords();
+            DisplayBase();
+            LoadWords(false);
             GenerateDisplayWord();
         }
 
-        //Се мести времето во зависност од тежината избрана -- Easy - 3 минути, Medium - 2 минути, Hard - 1 минута
+        private void SetLanguage()
+        {
+            if (Game.Language == Language.English)
+            {
+                EnglishKeyboard.Visible = true;
+                MacedonianKeyboard.Visible = false;
+            }
+            else
+            {
+                EnglishKeyboard.Visible = false;
+                MacedonianKeyboard.Visible = true;
+            }
+
+            this.Text = LanguageSettings.Hangman;
+            gameToolStripMenuItem.Text = LanguageSettings.NewGame;
+            newGameToolStripMenuItem.Text = LanguageSettings.NewGame;
+            instructionsToolStripMenuItem.Text = LanguageSettings.Instructions;
+            quitGameToolStripMenuItem.Text = LanguageSettings.QuitGame;
+            highScoresToolStripMenuItem.Text = LanguageSettings.HighScores;
+            WrongLettersLabel.Text = LanguageSettings.WrongLetters;
+            CategoryLabel.Text = LanguageSettings.CategoryLabel;
+            TimerLabel.Text = LanguageSettings.TimeLeft;
+            HintButton.Text = LanguageSettings.Hint;
+        }
+
         private void InitializeTimer()
         {
             if (Game.Difficulty == Difficulty.Easy)
@@ -54,10 +76,10 @@ namespace Hangman_VP
 
             Timer.Tick += new EventHandler(timer_Tick);
             Timer.Interval = Interval;
+
         }
 
-        //Функција која го прикажува човекот и бесилката
-        private void DisplayHangmanAndBase()
+        private void DisplayBase()
         {
             BasePictureBox.ImageLocation = @"Images\base.png";
             hangmanHead.ImageLocation = @"Images\hangman-1.png";
@@ -68,21 +90,80 @@ namespace Hangman_VP
             hangmanRightLeg.ImageLocation = @"Images\hangman-6.png";
         }
 
-        //Генерира random збор од листата - Words
         private void GenerateDisplayWord()
         {
             Timer.Stop();
             TimeElapsed = 0;
             Timer.Start();
 
-            int index = new Random().Next(0, Words.Count);
-            Word = Words.ElementAt(index);
-            string word = Word.Name.ToUpper()[0].ToString();
+            if (Words.Count != 0)
+            {
+                int index = new Random().Next(0, Words.Count);
+                Word = Words.ElementAt(index);
+            }
+            else
+            {
+                if (Game.Categories.Count >= 5)
+                {
+                    MessageBox.Show($"{LanguageSettings.YouWonTheGameMessage}{Game.Difficulty}!", LanguageSettings.CongratulationsMessage);
+                }
+                else
+                {
+                    string categories = string.Empty;
+                    foreach (var category in Game.Categories)
+                    {
+                        categories += category.ToString() + " ";
+                    }
+
+                    DialogResult result = MessageBox.Show(LanguageSettings.CategoriesFinishedMessage, LanguageSettings.WellDoneMessage, MessageBoxButtons.YesNo);
+
+                    if (result == DialogResult.Yes)
+                    {
+                        LoadWords(true);
+                        GenerateDisplayWord();
+                    }
+                    else
+                    {
+                        NewGameForm newGameForm = new NewGameForm();
+                        newGameForm.Show();
+                        this.Close();
+                    }
+                }
+            }
+
+            string ctg = string.Empty;
+            if (Word.Category == Category.General)
+                ctg = LanguageSettings.CategoriesGeneral;
+            else if (Word.Category == Category.Sport)
+                ctg = LanguageSettings.CategoriesSport;
+            else if (Word.Category == Category.Science)
+                ctg = LanguageSettings.CategoriesScience;
+            else if (Word.Category == Category.Movies)
+                ctg = LanguageSettings.CategoriesMovies;
+            else
+                ctg = LanguageSettings.CategoriesGeography;
+
+            CategoryLabel.Text = $"{LanguageSettings.CategoryLabel}: {ctg}";
+
+            Mistakes = 0;
+            WrongoLettersLabel.Text = string.Empty;
+
+            var word = Word.Name.ToUpper()[0].ToString();
             for (var i = 0; i < Word.Name.Length - 1; i++)
             {
                 word += " _";
             }
             WordToGuessLabel.Text = word;
+
+            foreach (Button c in EnglishKeyboard.Controls)
+            {
+                c.Enabled = true;
+            }
+
+            foreach (Button c in MacedonianKeyboard.Controls)
+            {
+                c.Enabled = true;
+            }
 
             hangmanHead.Visible = false;
             hangmanBody.Visible = false;
@@ -92,7 +173,6 @@ namespace Hangman_VP
             hangmanRightLeg.Visible = false;
         }
 
-        //Оваа функција е за да го врати зборот во форма како : U _ I _ E _ S _ T Y  со празни места..(изгледа поубаво)
         private void UpdateDisplayWord(string word)
         {
             StringBuilder wordBuilder = new StringBuilder();
@@ -107,12 +187,11 @@ namespace Hangman_VP
             WordToGuessLabel.Text = wordBuilder.ToString().ToUpper();
         }
 
-        //Ја валидира буквата што е кликната
         private void ValidateLetter(char letter)
         {
             bool letterGuessIsCorrect = false;
 
-            //Ибриши ги празните места од зборот.. за да дојде во форма како: U_I_E_S_TY
+            //Ибриши ги празните места од зборот.. за да дојде во форма како: u_i_e_s_ty
             string word = new string(WordToGuessLabel.Text.Where(c => !Char.IsWhiteSpace(c)).ToArray()).ToLower();
             for (int i = 0; i < Word.Name.Length; i++)
             {
@@ -127,17 +206,16 @@ namespace Hangman_VP
 
             if (Word.Name == word)
             {
-                Timer.Stop();
                 Game.Player.HighScore += 1;
-                //Избриши го зборот од листата, за да не се појави повторно
                 Words.Remove(Word);
+                Timer.Stop();
                 UpdateDisplayWord(word);
-                MessageBox.Show("You guessed the word !", "Congratulations!");
+                MessageBox.Show(LanguageSettings.WordGuessCorrect, LanguageSettings.WellDoneMessage);
                 GenerateDisplayWord();
                 return;
             }
 
-            if (!letterGuessIsCorrect)
+            if (letterGuessIsCorrect == false)
             {
                 ++Mistakes;
                 string letters = letter + ", ";
@@ -169,7 +247,7 @@ namespace Hangman_VP
                 if (Mistakes >= 6)
                 {
                     Timer.Stop();
-                    MessageBox.Show($"Too bad, the correct word was: {Word.Name.ToUpper()}", "Woops you got hanged!");
+                    MessageBox.Show($"{LanguageSettings.WordGuessIncorrect}{Word.Name.ToUpper()}", LanguageSettings.YouGotHangedMessage);
                     GenerateDisplayWord();
                     return;
                 }
@@ -180,16 +258,20 @@ namespace Hangman_VP
             }
         }
 
-        //Функција која се повикува кога буква ќе се кликне
         private void letter_Clicked(object sender, EventArgs e)
         {
             var button = (Button)sender;
+            button.Enabled = false;
 
             var letter = button.Text.ToLower()[0];
             ValidateLetter(letter);
         }
 
-        //Ќе се извршува секоја секунда
+        private void HintButton_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show(Word.Hint, LanguageSettings.Hint);
+        }
+
         private void timer_Tick(object sender, EventArgs e)
         {
             TimeElapsed++;
@@ -198,19 +280,88 @@ namespace Hangman_VP
                 int newTime = Time - TimeElapsed;
                 int min = newTime / 60;
                 int sec = newTime % 60;
-                TimerLabel.Text = string.Format("Time left: {0:00}:{1:00}", min, sec);
+                TimerLabel.Text = string.Format("{0} {1:00}:{2:00}", LanguageSettings.TimeLeft, min, sec);
             }
             else
             {
                 Timer.Dispose();
                 TimeElapsed = 0;
                 Timer.Stop();
-                MessageBox.Show("Ви истече времето", "Истече времето..");
+                MessageBox.Show(LanguageSettings.TimeIsUpMessage, LanguageSettings.YouGotHangedMessage);
                 GenerateDisplayWord();
             }
         }
-        //Функција која ги генерира зборовите и ги сместува во листа - Words
-        private void LoadWords()
+
+        private void quitGameToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void instructionsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            InstructionsForm instructionsForm = new InstructionsForm();
+            instructionsForm.Show();
+        }
+
+        private void newGameToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            NewGameForm newGameForm = new NewGameForm();
+            newGameForm.Show();
+            this.Close();
+        }
+
+        private void highScoresToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            HighScoresForm highScoresForm = new HighScoresForm();
+            highScoresForm.Show();
+        }
+
+        private void HangmanForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (Game.Player.HighScore == 0)
+                return;
+
+            if (Game.Difficulty == Difficulty.Easy)
+            {
+                if (Settings.Default.EasyHighscores != null)
+                {
+                    Settings.Default.EasyHighscores.Add(Game.Player.ToString());
+                }
+                else
+                {
+                    Settings.Default.EasyHighscores = new System.Collections.Specialized.StringCollection();
+                    Settings.Default.EasyHighscores.Add(Game.Player.ToString());
+                }
+            }
+            else if (Game.Difficulty == Difficulty.Medium)
+            {
+                if (Settings.Default.MediumHighscores != null)
+                {
+                    Settings.Default.MediumHighscores.Add(Game.Player.ToString());
+                }
+                else
+                {
+                    Settings.Default.MediumHighscores = new System.Collections.Specialized.StringCollection();
+                    Settings.Default.MediumHighscores.Add(Game.Player.ToString());
+                }
+            }
+            else
+            {
+                if (Settings.Default.HardHighscores != null)
+                {
+                    Settings.Default.HardHighscores.Add(Game.Player.ToString());
+                }
+                else
+                {
+                    Settings.Default.HardHighscores = new System.Collections.Specialized.StringCollection();
+                    Settings.Default.HardHighscores.Add(Game.Player.ToString());
+                }
+            }
+
+            Settings.Default.Save();
+        }
+
+        private void LoadWords(bool categoriesCompleted)
         {
             Words = new List<Word>();
             List<Word> words = new List<Word>
@@ -370,7 +521,7 @@ namespace Hangman_VP
                 new Word("детергент", "ПРОДУКТ за чистење", Difficulty.Medium, Language.Macedonian,Category.General),
                 new Word("тастатура", "Каде пишуваме", Difficulty.Medium, Language.Macedonian,Category.General),
                 new Word("наочари", "Ги носиме кога има сонце", Difficulty.Medium, Language.Macedonian,Category.General),
-            
+
                 //General, hard, macedonian
                 new Word("авокадо", "Овошче", Difficulty.Hard, Language.Macedonian,Category.General),
                 new Word("брава", "Кај што ги ставаме клучевите", Difficulty.Hard, Language.Macedonian,Category.General),
@@ -453,37 +604,35 @@ namespace Hangman_VP
                 new Word("пакистан", "Војна", Difficulty.Hard, Language.Macedonian,Category.Geography),
 
             };
+            //Земи ги зборовите според избраните категории, јазикот и тежина на зборовите која ја избрал играчот.
+            if (!categoriesCompleted)
+            {
+                /*
+                foreach (var category in Game.Categories)
+                {
+                    Words
+                        .AddRange(words
+                        .Where(d => d.Difficulty == Game.Difficulty)
+                        .Where(l => l.Language == Game.Language)
+                        .Where(c => c.Category == category)
+                        .ToList());
+                }
+                */
 
-            Words = words;
-        }
-
-        private void highScoresToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            HighScoresForm highScoresForm = new HighScoresForm();
-            highScoresForm.Show();
-        }
-
-        private void newGameToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            NewGameForm newGameForm = new NewGameForm();
-            newGameForm.Show();
-            this.Close();
-        }
-
-        private void quitGameToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            Application.Exit();
-        }
-
-        private void instructionsToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            InstructionsForm instructionsForm = new InstructionsForm();
-            instructionsForm.Show();
-        }
-
-        private void HintButton_Click(object sender, EventArgs e)
-        {
-            MessageBox.Show($"{Word.Hint}", "Hint");
+                Words = words.Where(x => x.Difficulty == Game.Difficulty && x.Language == Game.Language && Game.Categories.Contains(x.Category)).ToList();
+            }
+            else
+            {
+                foreach (var category in Game.Categories)
+                {
+                    Words
+                        .AddRange(words
+                        .Where(d => d.Difficulty == Game.Difficulty)
+                        .Where(l => l.Language == Game.Language)
+                        .Where(c => c.Category != category)
+                        .ToList());
+                }
+            }
         }
 
         private void HangmanForm_KeyPress(object sender, KeyPressEventArgs e)
