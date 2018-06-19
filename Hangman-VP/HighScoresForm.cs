@@ -23,8 +23,11 @@ namespace Hangman
             List<Player> playersMedium = new List<Player>();
             List<Player> playersHard = new List<Player>();
 
+            //Кога немаме зачувано податоци во Settings, оваа вредност ќе биде Null, затоа правиме проверка
             if (Settings.Default.EasyHighscores != null)
             {
+                //Во Settings чуваме List<Speciallized.StringCollection>(), класата Player ја зачувуваме со .ToString() преоптоварениот оператор
+                //За ги извадиме пропертијата на објектот ја правиме следната операција и го додаваме Player објектот во листата за прикажување
                 foreach (var player in Settings.Default.EasyHighscores)
                 {
                     string name = player.Trim().Split('-')[0];

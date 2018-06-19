@@ -13,7 +13,7 @@ namespace Hangman
         private Timer Timer = new Timer();
         private static int Time { get; set; }
         private const int Interval = 1000;
-        public int TimeElapsed = 0;
+        public static int TimeElapsed = 0;
         public Game Game { get; set; }
         public List<Word> Words { get; set; }
         public Word Word { get; set; }
@@ -251,6 +251,7 @@ namespace Hangman
                 {
                     Timer.Stop();
                     MessageBox.Show($"{LanguageSettings.WordGuessIncorrect}{Word.Name.ToUpper()}", LanguageSettings.YouGotHangedMessage);
+                    SaveHighscore();
                     GenerateDisplayWord();
                     return;
                 }
@@ -274,6 +275,53 @@ namespace Hangman
         private void HintButton_Click(object sender, EventArgs e)
         {
             MessageBox.Show(Word.Hint, LanguageSettings.Hint);
+        }
+
+        //Го зачувува рекордот на играчот во Settings.Default во соодветна листа за тежината на зборовите
+        private void SaveHighscore()
+        {
+            if (Game.Player.HighScore == 0)
+                return;
+
+            if (Game.Difficulty == Difficulty.Easy)
+            {
+                if (Settings.Default.EasyHighscores != null)
+                {
+                    Settings.Default.EasyHighscores.Add(Game.Player.ToString());
+                }
+                else
+                {
+                    Settings.Default.EasyHighscores = new System.Collections.Specialized.StringCollection();
+                    Settings.Default.EasyHighscores.Add(Game.Player.ToString());
+                }
+            }
+            else if (Game.Difficulty == Difficulty.Medium)
+            {
+                if (Settings.Default.MediumHighscores != null)
+                {
+                    Settings.Default.MediumHighscores.Add(Game.Player.ToString());
+                }
+                else
+                {
+                    Settings.Default.MediumHighscores = new System.Collections.Specialized.StringCollection();
+                    Settings.Default.MediumHighscores.Add(Game.Player.ToString());
+                }
+            }
+            else
+            {
+                if (Settings.Default.HardHighscores != null)
+                {
+                    Settings.Default.HardHighscores.Add(Game.Player.ToString());
+                }
+                else
+                {
+                    Settings.Default.HardHighscores = new System.Collections.Specialized.StringCollection();
+                    Settings.Default.HardHighscores.Add(Game.Player.ToString());
+                }
+            }
+
+            Settings.Default.Save();
+            Game.Player.HighScore = 0;
         }
 
         private void timer_Tick(object sender, EventArgs e)
@@ -322,47 +370,7 @@ namespace Hangman
 
         private void HangmanForm_FormClosing(object sender, FormClosingEventArgs e)
         {
-            if (Game.Player.HighScore == 0)
-                return;
-
-            if (Game.Difficulty == Difficulty.Easy)
-            {
-                if (Settings.Default.EasyHighscores != null)
-                {
-                    Settings.Default.EasyHighscores.Add(Game.Player.ToString());
-                }
-                else
-                {
-                    Settings.Default.EasyHighscores = new System.Collections.Specialized.StringCollection();
-                    Settings.Default.EasyHighscores.Add(Game.Player.ToString());
-                }
-            }
-            else if (Game.Difficulty == Difficulty.Medium)
-            {
-                if (Settings.Default.MediumHighscores != null)
-                {
-                    Settings.Default.MediumHighscores.Add(Game.Player.ToString());
-                }
-                else
-                {
-                    Settings.Default.MediumHighscores = new System.Collections.Specialized.StringCollection();
-                    Settings.Default.MediumHighscores.Add(Game.Player.ToString());
-                }
-            }
-            else
-            {
-                if (Settings.Default.HardHighscores != null)
-                {
-                    Settings.Default.HardHighscores.Add(Game.Player.ToString());
-                }
-                else
-                {
-                    Settings.Default.HardHighscores = new System.Collections.Specialized.StringCollection();
-                    Settings.Default.HardHighscores.Add(Game.Player.ToString());
-                }
-            }
-
-            Settings.Default.Save();
+            SaveHighscore();
         }
 
         //Event на целата форма, слуша за копче кликнато од тастатура, текстот на копчето се испраќа на ValidateLetter функцијата..
