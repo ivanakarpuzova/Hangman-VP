@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Hangman_VP
+namespace Hangman
 {
     static class Program
     {

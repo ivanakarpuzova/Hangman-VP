@@ -1,5 +1,4 @@
-﻿using Hangman_VP.Models;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 
 namespace Hangman.Models
 {

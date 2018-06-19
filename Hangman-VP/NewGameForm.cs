@@ -1,5 +1,4 @@
 ﻿using Hangman.Models;
-using Hangman_VP.Models;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -10,7 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Hangman_VP
+namespace Hangman
 {
     public partial class NewGameForm : Form
     {

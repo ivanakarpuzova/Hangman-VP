@@ -1,4 +1,4 @@
-﻿namespace Hangman_VP
+﻿namespace Hangman
 {
     partial class HighScoresForm
     {

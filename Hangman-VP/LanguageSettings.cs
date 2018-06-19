@@ -1,5 +1,6 @@
 ﻿using Hangman.Models;
-namespace Hangman_VP
+
+namespace Hangman
 {
 
     public static class LanguageSettings

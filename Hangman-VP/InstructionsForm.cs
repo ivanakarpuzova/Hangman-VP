@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Hangman_VP
+namespace Hangman
 {
     public partial class InstructionsForm : Form
     {
