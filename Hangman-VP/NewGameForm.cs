@@ -113,27 +113,12 @@ namespace Hangman
 
         private void PlayerNameTextBox_Validating(object sender, CancelEventArgs e)
         {
-            if (PlayerNameTextBox.Text.Trim().Length == 0)
-            {
-                e.Cancel = true;
-                errorProvider1.SetError(PlayerNameTextBox, LanguageSettings.EnterNameMessage);
-            }
-            else
-            {
-                errorProvider1.SetError(PlayerNameTextBox, null);
-            }
+
         }
 
         private void newGameToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            PlayerNameTextBox.Text = string.Empty;
-            foreach (Control checkbox in CategoriesGroupBox.Controls)
-            {
-                if (checkbox is CheckBox)
-                {
-                    ((CheckBox)checkbox).Checked = false;
-                }
-            }
+
         }
 
         private void instructionsToolStripMenuItem_Click(object sender, EventArgs e)

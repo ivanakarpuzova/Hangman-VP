@@ -45,6 +45,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DevelopersForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DevelopersForm.Designer.cs">
+      <DependentUpon>DevelopersForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="HighScoresForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -75,6 +81,9 @@
     <Compile Include="Models\Word.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="DevelopersForm.resx">
+      <DependentUpon>DevelopersForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="HangmanForm.resx">
       <DependentUpon>HangmanForm.cs</DependentUpon>
     </EmbeddedResource>
