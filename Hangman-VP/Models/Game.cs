@@ -1,19 +1,38 @@
-﻿using System;
+﻿using Hangman_VP.Models;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace Hangman_VP.Models
+namespace Hangman.Models
 {
+    public enum Difficulty
+    {
+        Easy,
+        Medium,
+        Hard
+    }
+
+    public enum Language
+    {
+        English,
+        Macedonian
+    }
+
+    public enum Category
+    {
+        General,
+        Sport,
+        Science,
+        Movies,
+        Geography,
+    }
+
     public class Game
     {
         public Player Player { get; set; }
-        public int Difficulty { get; set; }
-        public string Language { get; set; }
-        public List<string> Categories { get; set; }
+        public Difficulty Difficulty { get; set; }
+        public Language Language { get; set; }
+        public List<Category> Categories { get; set; }
 
-        public Game(Player player, int difficulty, string language, List<string> categories)
+        public Game(Player player, Difficulty difficulty, Language language, List<Category> categories)
         {
             Player = player;
             Difficulty = difficulty;
